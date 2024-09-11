@@ -10,13 +10,16 @@
         display: flex
         flex-wrap: wrap
         flex-direction: column
-img
-    // width: 100%
-    // height: 100%
-    position: absolute
-    z-index: 0
-    opacity: 5%
-    object-fit: cover
+    #right
+        position: relative
+        img
+            width: 195%
+            max-width: 710px
+            height: auto
+            top: 2vh
+            right: -1vw
+            position: absolute
+            opacity: 16%
 app-name
     width: 50px
     height: calc(100%)
@@ -30,14 +33,14 @@ app-name
     span
         width: auto
         height: 22px
-        font-size: 22px
+        font-size: 24px
         transform: rotate(90deg)
         padding-left: 25px
 app-rol-name, app-skill-level-name
     height: 25px
     width: calc(100% - 50px)
     color: #aaa
-    font-size: 18px
+    font-size: 20px
     padding-left: 5px
     padding-top: 5px
 app-rol-name
