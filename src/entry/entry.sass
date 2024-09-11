@@ -1,0 +1,85 @@
+*
+    padding: 0
+    margin: 0
+    border: none
+    outline: none
+    background: none
+    height: 0
+    box-sizing: border-box
+    width: 0
+    font-family: monospace
+:host
+    display: flex
+    justify-content: center
+    width: 100vw
+    height: 100vh
+    overflow-x: hidden
+    position: relative
+    div:nth-of-type(1)
+        position: absolute
+        width: 200px
+        height: 70px
+        left: 2%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(28,39,137,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 100%)
+        transform: skew(-5deg, 35deg)
+        filter: blur(45px)
+    div:nth-of-type(2)
+        position: absolute
+        width: 300px
+        height: 170px
+        right: -5%
+        top: 7%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(18,19,107,1) 12%, rgba(30,10,80,1) 52%, rgba(0,212,255,0) 60%)
+        transform: skew(30deg, -45deg)
+        filter: blur(55px)
+    div:nth-of-type(3)
+        position: absolute
+        width: 100px
+        height: 70px
+        left: 5%
+        top: 20%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(28,39,137,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 60%)
+        transform: skew(30deg, -45deg)
+        filter: blur(55px)
+
+app-main-page
+    display: flex
+    position: relative
+    height: 300vh
+    width: 100vw
+    flex-wrap: wrap
+    max-width: 1900px
+    background: #020312
+
+app-main-header
+    width: 100%
+    max-width: 1900px
+    height: 50px
+    display: flex
+    border-bottom: 1px solid #777
+    position: fixed
+    justify-content: space-between
+    z-index: 200
+
+app-logo
+    height: 50px
+    width: 50px
+    display: inherit
+    
+app-nav-button
+    height: 50px
+    width: 50px
+    display: inherit
+    //background: blue
+
+app-main-section-one, app-main-section-two, app-main-section-three
+    height: 100vh
+    width: 100%
+    max-width: 1900px
+    display: inherit
+    background: transparent
+    z-index: 100
+    

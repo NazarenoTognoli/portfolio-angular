@@ -22,7 +22,15 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@atom/*": ["components/atoms/*"],
+      "@mol/*": ["components/molecules/*"],
+      "@org/*": ["components/organisms/*"],
+      "@page/*": ["components/pages/*"],
+      "@tmpl/*": ["components/templates/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -31,3 +39,4 @@
     "strictTemplates": true
   }
 }
+

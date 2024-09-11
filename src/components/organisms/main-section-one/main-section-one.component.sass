@@ -1,0 +1,67 @@
+@mixin background-gray($level: 100%)
+  $gray-value: mix(black, white, $level) // Mix black and white to get the desired gray level
+  background-color: $gray-value
+// Usage example:
+:host
+    position: relative
+    #left, #right
+        width: 50%
+        height: 100%
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+img
+    // width: 100%
+    // height: 100%
+    position: absolute
+    z-index: 0
+    opacity: 5%
+    object-fit: cover
+app-name
+    width: 50px
+    height: calc(100%)
+    //border-top: 1px solid #ddd
+    margin-top: 50px
+    color: #aaa
+    display: flex
+    flex-direction: column
+    z-index: 100
+    //background: linear-gradient(to bottom, #222 0%, #020202 45%)
+    span
+        width: auto
+        height: 22px
+        font-size: 22px
+        transform: rotate(90deg)
+        padding-left: 25px
+app-rol-name, app-skill-level-name
+    height: 25px
+    width: calc(100% - 50px)
+    color: #aaa
+    font-size: 18px
+    padding-left: 5px
+    padding-top: 5px
+app-rol-name
+    margin-top: 52px
+    display: flex
+    flex-wrap: wrap
+    span
+        width: 100%
+    span:nth-of-type(2)
+        margin-top: 17px
+        padding-left: 10px
+        animation: moverPaddingn2 .8s ease-in-out forwards
+    span:nth-of-type(3)
+        padding-left: 6px
+        margin-top: 17px
+        animation: moverPaddingn1 .6s ease-in-out forwards
+
+@keyframes moverPaddingn1
+    from
+        padding-left: 0
+    to
+        padding-left: 6px
+@keyframes moverPaddingn2
+    from
+        padding-left: 0
+    to
+        padding-left: 10px

@@ -19,7 +19,7 @@
           "options": {
             "outputPath": "dist/portfolio-angular",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "browser": "src/entry/entry.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -32,7 +32,7 @@
               }
             ],
             "styles": [
-              "src/styles.sass"
+              "src/entry/entry.sass"
             ],
             "scripts": []
           },
@@ -91,7 +91,7 @@
               }
             ],
             "styles": [
-              "src/styles.sass"
+              "src/entry/entry.sass"
             ],
             "scripts": []
           }
