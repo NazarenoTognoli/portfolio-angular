@@ -2,61 +2,82 @@
   $gray-value: mix(black, white, $level) // Mix black and white to get the desired gray level
   background-color: $gray-value
 // Usage example:
+@import 'entry/entry.sass'
 :host
     position: relative
-    #left, #right
-        width: 50%
-        height: 100%
-        display: flex
-        flex-wrap: wrap
-        flex-direction: column
-    #right
-        position: relative
-        img
-            width: 195%
-            max-width: 710px
-            height: auto
-            top: 2vh
-            right: -1vw
-            position: absolute
-            opacity: 16%
-app-name
-    width: 50px
-    height: calc(100%)
-    //border-top: 1px solid #ddd
-    margin-top: 50px
-    color: #aaa
-    display: flex
+    overflow: hidden
     flex-direction: column
-    z-index: 100
-    //background: linear-gradient(to bottom, #222 0%, #020202 45%)
-    span
-        width: auto
-        height: 22px
-        font-size: 24px
-        transform: rotate(90deg)
-        padding-left: 25px
-app-rol-name, app-skill-level-name
-    height: 25px
+    flex-wrap: wrap
+    justify-content: flex-start
+    img
+        width: 96vw
+        max-width: 680px
+        height: auto
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        position: absolute
+        opacity: 16%
+    .name
+        width: 50px
+        height: calc(100% - 50px - 3vh)
+        margin-top: 70px
+        margin-top: calc(50px + 3vh)
+        color: $primary-color
+        display: flex
+        flex-direction: column
+        z-index: 100
+        span
+            width: auto
+            height: 22px
+            font-size: 24px
+            transform: rotate(90deg)
+            padding-left: 25px
+            line-height: 1.2
+        .color-letter
+            color: $secondary-color
+.rol-name
+    height: 65px
     width: calc(100% - 50px)
-    color: #aaa
-    font-size: 20px
+    color: $primary-color
+    font-size: 22px
     padding-left: 5px
     padding-top: 5px
-app-rol-name
-    margin-top: 52px
+    margin-top: 72px
+    margin-top: calc(50px + 3.2vh)
     display: flex
+    height: calc(18 * 3)
     flex-wrap: wrap
     span
         width: 100%
+        height: 20px
     span:nth-of-type(2)
-        margin-top: 17px
         padding-left: 10px
         animation: moverPaddingn2 .8s ease-in-out forwards
     span:nth-of-type(3)
         padding-left: 6px
-        margin-top: 17px
         animation: moverPaddingn1 .6s ease-in-out forwards
+    .color-word
+        color: $secondary-color
+.description
+    width: calc(100% - 50px)
+    color: $primary-color
+    z-index: 200
+    margin-top: 300px
+    margin-top: 345px
+    margin-top: 55vh
+    font-size: 15px
+#contact-button
+    width: 110px
+    height: 35px
+    margin-top: 20px
+    border: 1px solid $primary-color
+    color: $primary-color
+    margin-left: auto
+    margin-right: 15vw
+#contact-button:active
+    border-color: $secondary-color
+    color: $secondary-color
 
 @keyframes moverPaddingn1
     from
@@ -68,3 +89,8 @@ app-rol-name
         padding-left: 0
     to
         padding-left: 10px
+@media (pointer: coarse) and (hover: none)
+    :host
+        img
+            top: 270px
+            transform: translate(-48%, -50%)

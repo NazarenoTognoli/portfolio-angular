@@ -1,49 +1,53 @@
+$primary-color: #aaa
+$secondary-color: #ff9900
+$background-color: #100421
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,1000,2000,3000,4000,5000,6000,7000,8000,9001,1001,2001,3001,4001,5001,6001,7001,8001,900&display=swap')
 *
     padding: 0
     margin: 0
     border: none
     outline: none
     background: none
-    height: 0
     box-sizing: border-box
-    width: 0
-    font-family: monospace
+    font-family: 'Barlow', monospace
+body
+    background-color: $background-color
+/* Modificar el ancho de la barra de desplazamiento */
+::-webkit-scrollbar
+    width: 9px
+    height: 0 /* Para scroll horizontal */
+
+/* Estilos para el "thumb" (la parte que se arrastra) */
+::-webkit-scrollbar-thumb
+    background-color: #626280
+    border-radius: 6px
+    border: 3px solid transparent /* Espacio entre el thumb y el track */
+
+
+/* Estilos para la pista (el fondo de la barra) */
+::-webkit-scrollbar-track 
+    background-color: #333
+
+
+/* Estilos para los botones (opcional) */
+::-webkit-scrollbar-button 
+    background-color: $background-color
+    height: 0
+
+
+/* Hover sobre el thumb */
+::-webkit-scrollbar-thumb:hover 
+    background-color: $secondary-color
+
+
+
 :host
     display: flex
     justify-content: center
-    width: 100vw
+    width: calc(100vw - 9px)
     height: 100vh
-    overflow-x: hidden
     position: relative
-    div:nth-of-type(1)
-        position: absolute
-        width: 220px
-        height: 90px
-        left: 2%
-        border-radius: 50%
-        background: radial-gradient(circle, rgba(28,39,107,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 100%)
-        transform: skew(-5deg, 35deg)
-        filter: blur(40px)
-    div:nth-of-type(2)
-        position: absolute
-        width: 470px
-        height: 170px
-        right: -45%
-        top: 6%
-        border-radius: 50%
-        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(28,29,127,1) 12%, rgba(30,10,80,1) 52%, rgba(0,212,255,0) 60%)
-        transform: skew(30deg, -45deg)
-        filter: blur(55px)
-    div:nth-of-type(3)
-        position: absolute
-        width: 100px
-        height: 70px
-        left: 5%
-        top: 20%
-        border-radius: 50%
-        background: radial-gradient(circle, rgba(28,29,157,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 60%)
-        transform: skew(30deg, -45deg)
-        filter: blur(55px)
 
 app-main-page
     display: flex
@@ -52,29 +56,77 @@ app-main-page
     width: 100vw
     flex-wrap: wrap
     max-width: 1900px
-    background: #070714
     background: #100421
+    .light-1
+        position: absolute
+        width: 280px
+        width: 70%
+        height: 90px
+        height: 10%
+        left: 2%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(48,49,127,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 100%)
+        transform: skew(-5deg, 35deg)
+        filter: blur(45px)
+        height: 33vh
+    .light-2
+        position: absolute
+        width: 470px
+        width: 30%
+        height: 270px
+        left: 40%
+        top: 160px
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(28,29,127,1) 42%, rgba(30,10,80,1) 52%, rgba(0,212,255,0) 60%)
+        transform: skew(30deg, -45deg)
+        filter: blur(35px)
+        height: 40vh
+    .light-3
+        position: absolute
+        width: 100px
+        width: 70%
+        left: 4%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(18,19,137,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 60%)
+        transform: skew(0deg, -30deg)
+        //background: red
+        filter: blur(75px)
+        height: 53vh
+        top: calc(90vh - 53vh)
 
-app-main-header
+
+.main-header
     width: 100%
     max-width: 1900px
     height: 50px
     display: flex
-    border-bottom: 1px solid #777
+    border-bottom: 1px solid $primary-color
     position: fixed
     justify-content: space-between
-    z-index: 200
+    z-index: 300
+    transition: background-color ease .5s
 
-app-logo
+.scrolled
+    background-color: rgba(0, 0, 0, 0.6)
+
+.home-button
     height: 50px
     width: 50px
-    display: inherit
+    display: none
+    justify-content: center
+    align-items: center
+    img
+        width: 75%
+        height: 75%
     
-app-nav-button
+.nav-button
     height: 50px
     width: 50px
-    display: inherit
+    display: none
     //background: blue
+    img
+        width: 100%
+        height: 100%
 
 app-main-section-one, app-main-section-two, app-main-section-three
     height: 100vh
@@ -82,5 +134,13 @@ app-main-section-one, app-main-section-two, app-main-section-three
     max-width: 1900px
     display: inherit
     background: transparent
-    z-index: 100
-    
+    z-index: 200
+
+
+@media (pointer: coarse) and (hover: none)
+    :host
+        width: 100vw
+    .home-button
+        display: inherit
+    .nav-button
+        display: inherit

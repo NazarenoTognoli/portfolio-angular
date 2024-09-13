@@ -1,7 +1,11 @@
 <app-main-page>
-    <app-main-header>
-        <app-logo></app-logo>
-        <app-nav-button></app-nav-button>
+    <app-main-header class="main-header" [ngClass]="{'scrolled': scrolled}">
+        <a class="home-button">
+            <img src="/assets/images/home.png">
+        </a>
+        <button class="nav-button">
+            <img src="/assets/images/menu-bar.png">
+        </button>
     </app-main-header>
     <app-main-section-one>
     </app-main-section-one>
@@ -9,7 +13,7 @@
     </app-main-section-two>
     <app-main-section-three>
     </app-main-section-three>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="light-1"></div>
+    <div class="light-2"></div>
+    <div class="light-3"></div>
 </app-main-page>
