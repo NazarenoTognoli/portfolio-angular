@@ -1,8 +1,11 @@
-$primary-color: #aaa
+$primary-color: #b0b0b7
+$primary-color-potente: #dde
 $secondary-color: #ff9900
-$background-color: #100421
+$background-color: #160b30
+$primary-color: #ccc
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,1000,2000,3000,4000,5000,6000,7000,8000,9001,1001,2001,3001,4001,5001,6001,7001,8001,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap')
 *
     padding: 0
     margin: 0
@@ -13,6 +16,8 @@ $background-color: #100421
     font-family: 'Barlow', monospace
 body
     background-color: $background-color
+.body-no-scroll
+    overflow-y: hidden
 /* Modificar el ancho de la barra de desplazamiento */
 ::-webkit-scrollbar
     width: 9px
@@ -20,14 +25,14 @@ body
 
 /* Estilos para el "thumb" (la parte que se arrastra) */
 ::-webkit-scrollbar-thumb
-    background-color: #626280
+    background-color: #424260
     border-radius: 6px
     border: 3px solid transparent /* Espacio entre el thumb y el track */
 
 
 /* Estilos para la pista (el fondo de la barra) */
 ::-webkit-scrollbar-track 
-    background-color: #333
+    background-color: rgba(0, 0, 0, .7)
 
 
 /* Estilos para los botones (opcional) */
@@ -38,17 +43,17 @@ body
 
 /* Hover sobre el thumb */
 ::-webkit-scrollbar-thumb:hover 
-    background-color: $secondary-color
+    background-color: #626280
 
 
-
+//this shit for mobile
 :host
     display: flex
     justify-content: center
     width: calc(100vw - 9px)
     height: 100vh
     position: relative
-
+//this shit for mobile
 app-main-page
     display: flex
     position: relative
@@ -56,7 +61,7 @@ app-main-page
     width: 100vw
     flex-wrap: wrap
     max-width: 1900px
-    background: #100421
+    background: #160b30
     .light-1
         position: absolute
         width: 280px
@@ -85,16 +90,14 @@ app-main-page
         position: absolute
         width: 100px
         width: 70%
-        left: 4%
+        left: 17%
         border-radius: 50%
         background: radial-gradient(circle, rgba(18,19,137,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 60%)
-        transform: skew(0deg, -30deg)
+        transform: skew(0deg, 20deg)
         //background: red
         filter: blur(75px)
-        height: 53vh
-        top: calc(90vh - 53vh)
-
-
+        height: 60vh
+        top: calc(90vh - 55vh)
 .main-header
     width: 100%
     max-width: 1900px
@@ -105,10 +108,40 @@ app-main-page
     justify-content: space-between
     z-index: 300
     transition: background-color ease .5s
-
-.scrolled
-    background-color: rgba(0, 0, 0, 0.6)
-
+    //background: rgba(0, 0, 0, .7)
+.home-button-desktop
+        color: #fff
+        height: 50px
+        width: 50px
+        display: inherit
+        align-items: center
+        justify-content: center
+        text-decoration: none
+.main-header-content-desktop
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    width: calc(100% - 50px)
+    height: 100%
+    a
+        text-decoration: none
+        color: $primary-color
+        padding-right: 6vw
+        font-family: "Quicksand"
+    a:hover
+        color: $secondary-color
+    // a:nth-of-type(4)
+    //     padding-right: 30px
+//this shit for mobile
+.main-header-while-nav-hidden
+    background-color: transparent
+    transition: background-color ease .5s
+.main-header-while-nav-visible
+    transition: none
+    background-color: rgba(0, 0, 0, .7)
+.main-header-scrolled
+    background-color: rgba(0, 0, 0, 0.7)
+//this shit for mobile
 .home-button
     height: 50px
     width: 50px
@@ -122,7 +155,7 @@ app-main-page
         height: 75%
 .home-button:active
     fill: $secondary-color
-    
+    //this shit for mobile
 .nav-button
     height: 50px
     width: 50px
@@ -134,7 +167,7 @@ app-main-page
         height: 100%
 .nav-button:active
     fill: $secondary-color
-
+//this shit for mobile
 app-main-section-one, app-main-section-two, app-main-section-three
     height: 100vh
     width: 100%
@@ -142,8 +175,12 @@ app-main-section-one, app-main-section-two, app-main-section-three
     display: inherit
     background: transparent
     z-index: 200
+.mobile-nav-visible
+    display: flex
+.mobile-nav-hidden
+    display: none
 
-
+//also this shit for mobile
 @media (pointer: coarse) and (hover: none)
     :host
         width: 100vw
@@ -151,3 +188,7 @@ app-main-section-one, app-main-section-two, app-main-section-three
         display: inherit
     .nav-button
         display: inherit
+    .main-header-content-desktop
+        display: none
+    .home-button-desktop
+        display: none

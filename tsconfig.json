@@ -29,7 +29,8 @@
       "@mol/*": ["components/molecules/*"],
       "@org/*": ["components/organisms/*"],
       "@page/*": ["components/pages/*"],
-      "@tmpl/*": ["components/templates/*"]
+      "@tmpl/*": ["components/templates/*"],
+      "@srv/*": ["features/*"]
     }
   },
   "angularCompilerOptions": {
