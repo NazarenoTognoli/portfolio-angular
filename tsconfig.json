@@ -30,7 +30,7 @@
       "@org/*": ["components/organisms/*"],
       "@page/*": ["components/pages/*"],
       "@tmpl/*": ["components/templates/*"],
-      "@srv/*": ["features/*"]
+      "@srv/*": ["services/*"]
     }
   },
   "angularCompilerOptions": {
