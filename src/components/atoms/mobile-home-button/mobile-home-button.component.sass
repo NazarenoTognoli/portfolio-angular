@@ -1,0 +1,17 @@
+:host
+    height: 50px
+    width: 50px
+    display: none //This was none by default ?
+    justify-content: center
+    align-items: center
+    transition: fill .3s ease
+    fill: #ccc
+:host:active
+    fill: #adf
+    //this shit for mobile
+svg
+    width: 75%
+    height: 75%
+@media (pointer: coarse) and (hover: none)
+    :host
+        display: flex

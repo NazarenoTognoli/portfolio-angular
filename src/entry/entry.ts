@@ -6,10 +6,7 @@ import { CommonModule } from '@angular/common'; // Importar CommonModule para us
 
 //Components
 import { MainPageComponent } from '@page/main-page/main-page.component';
-import { MainSectionOneComponent } from '@org/main-section-one/main-section-one.component';
-import { MainSectionTwoComponent } from '@org/main-section-two/main-section-two.component';
-import { MainSectionThreeComponent } from '@org/main-section-three/main-section-three.component';
-import { MainHeaderComponent } from '@mol/main-header/main-header.component';
+import { MainHeaderComponent } from '@org/main-header/main-header.component';
 import { MobileNavComponent } from '@org/mobile-nav/mobile-nav.component';
 //Services
 import { MobileNavDisplayService } from '@srv/mobile-nav-display.service';
@@ -19,9 +16,6 @@ import { MobileNavDisplayService } from '@srv/mobile-nav-display.service';
   standalone: true,
   imports: [
     MainPageComponent, 
-    MainSectionOneComponent,
-    MainSectionTwoComponent,
-    MainSectionThreeComponent,
     MainHeaderComponent,
     MobileNavComponent,
     CommonModule
@@ -30,11 +24,11 @@ import { MobileNavDisplayService } from '@srv/mobile-nav-display.service';
   styleUrls: ['./entry.sass']
 })
 export class AppComponent implements OnInit {
-  mainHeaderScrolled: boolean = false;
   mobileNavDisplayState: boolean = false;
+  mainHeaderScrolled: boolean = false;
 
   public mobileNavDisplayService = inject(MobileNavDisplayService);
-  constructor(private renderer : Renderer2) {}
+  constructor() {}
   // Detectamos el evento scroll en la ventana
   @HostListener('window:scroll', ['$event'])
   public onMainHeaderScrolled(): void {
@@ -42,13 +36,6 @@ export class AppComponent implements OnInit {
       this.mainHeaderScrolled = true;
     } else {
       this.mainHeaderScrolled = false;
-    }
-  }
-  bodyOverflowOnMobileNavVisible() {
-    if (this.mobileNavDisplayState) {
-     this.renderer.addClass(document.body, 'body-no-scroll');
-    } else {
-      this.renderer.removeClass(document.body, 'body-no-scroll');
     }
   }
   getMainHeaderClasses() {
@@ -59,7 +46,7 @@ export class AppComponent implements OnInit {
     };
   }
   ngOnInit(){
-    this.mobileNavDisplayService.mobileNavDisplayState.subscribe((newState)=>{
+    this.mobileNavDisplayService.mobileNavDisplayState.subscribe((newState: boolean)=>{
       this.mobileNavDisplayState = newState;
     });
   }

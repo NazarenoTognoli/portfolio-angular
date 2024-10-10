@@ -1,0 +1,65 @@
+@keyframes moverPaddingn1
+    from
+        padding-left: 10px
+    to
+        padding-left: 15px
+@keyframes moverPaddingn2
+    from
+        padding-left: 10px
+    to
+        padding-left: 25px
+:host
+    display: none
+
+@media (pointer: coarse) and (hover: none)
+    :host
+        width: 100%
+        height: calc(100% - 50px)
+        color: #ddd
+        font-size: 24px
+        margin-top: 50px
+        display: flex
+        height: calc(18 * 3)
+        flex-wrap: nowrap
+        z-index: 200
+        font-weight: 200
+        justify-content: flex-start
+        align-items: flex-end
+        flex-direction: column
+        span
+            background: rgba(22, 22, 22, .7)
+            //outline: 1px solid #444
+    .my-photo
+        width: 190px
+        height: 150px
+        display: flex
+        justify-content: center
+        margin-top: 5vh
+        outline: 1px solid #adf
+        img
+            object-fit: cover
+            height: 100%
+            margin-right: 10px
+            filter: grayscale(100%) brightness(.8)
+    .skill-level
+        padding-left: 10px
+        margin-top: 45px
+        width: 90%
+    .expertise
+        //padding-left: 10px
+        animation: moverPaddingn2 1.5s ease-in-out forwards
+        animation-delay: .8s
+        margin-top: 5px
+        width: 90%
+        padding-left: 10px
+    .role
+        //padding-left: 6px
+        width: 90%
+        animation: moverPaddingn1 1s ease-in-out forwards
+        animation-delay: .8s
+        margin-top: 5px
+        padding-left: 10px
+    .color-word
+        //color: $secondary-color
+        color: #adf
+        font-weight: 500

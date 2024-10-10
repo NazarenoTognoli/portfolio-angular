@@ -1,0 +1,58 @@
+:host
+    display: flex
+    position: relative
+    height: 300vh
+    width: calc(100vw - 9px)
+    flex-wrap: wrap
+    max-width: 1900px
+    background: #160b30
+    background: #000
+    .light-1
+        position: absolute
+        width: 70%
+        height: 20%
+        left: 2%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(48,49,127,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 100%)
+        transform: skew(-5deg, 35deg)
+        filter: blur(45px)
+        height: 43vh
+        display: none
+    .light-2
+        position: absolute
+        width: 470px
+        width: 30%
+        height: 270px
+        height: 70%
+        left: 40%
+        top: 160px
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(28,29,127,1) 42%, rgba(30,10,80,1) 52%, rgba(0,212,255,0) 60%)
+        background: radial-gradient(circle, rgba(48,49,127,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 100%)
+        transform: skew(30deg, -45deg)
+        filter: blur(35px)
+        height: 60vh
+        display: none
+    .light-3
+        position: absolute
+        width: 100px
+        width: 70%
+        left: 17%
+        border-radius: 50%
+        background: radial-gradient(circle, rgba(18,19,137,1) 12%, rgba(50,20,113,1) 52%, rgba(0,212,255,0) 60%)
+        transform: skew(0deg, -30deg)
+        //background: red
+        filter: blur(75px)
+        height: 80vh
+        top: calc(90vh - 55vh)
+        display: none
+app-main-section-one, app-main-section-two, app-main-section-three
+    height: 100vh
+    width: 100%
+    max-width: 1900px
+    display: inherit
+    background: transparent
+    z-index: 200
+@media (pointer: coarse) and (hover: none)
+    :host
+        width: 100vw

@@ -1,168 +1,140 @@
+//responsive fixes 
+#contact-button
+        display: none
+//config
 @mixin background-gray($level: 100%)
   $gray-value: mix(black, white, $level) // Mix black and white to get the desired gray level
   background-color: $gray-value
 // Usage example:
 @import 'entry/entry.sass'
-.rol-name
-    height: 65px
-    width: calc(100% - 50px)
-    color: $primary-color
-    font-size: 22px
-    font-size: 24px
-    padding-left: 5px
-    padding-top: 5px
-    margin-top: 72px
-    margin-top: calc(50px + 3.2vh)
-    display: flex
-    height: calc(18 * 3)
-    flex-wrap: wrap
-    span
-        width: 100%
-    span:nth-of-type(2)
-        //padding-left: 10px
-        animation: moverPaddingn2 1.5s ease-in-out forwards
-        animation-delay: .8s
-    span:nth-of-type(3)
-        //padding-left: 6px
-        animation: moverPaddingn1 1s ease-in-out forwards
-        animation-delay: .8s
-    .color-word
-        color: $secondary-color
-//styles for desktop
-// .rol-name
-//     margin-top: 0
-//     padding-left: 23%
-//     font-size: 30px
-//     padding-top: 0
-//     span
-//         font-family: "Quicksand"
-//         line-height: .97
-// .name-desktop
-//     margin-top: calc(50px + 10%)
-//     font-size: 42px
-//     color: $primary-color
-//     color: $primary-color-potente
-//     margin-left: 45%
-//     transform: translateX(-50%)
-//     span
-//         font-family: "Quicksand"
-//         white-space: nowrap
-
-    //color: $secondary-color
+//base
 :host
-    position: relative
-    overflow: hidden
-    flex-direction: column
-    justify-content: flex-start
-    .sec-one-top
+    flex-direction: row
+.background-video
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: -27px -20px
+    z-index: -1
+    opacity: .3
+.background-gradient
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: -1
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 7%, rgba(5,6,24,0) 20%, rgba(5,6,24,0) 80%, rgba(0,0,0,1) 100%)
+.div-one
+    width: 50%
+    height: calc(100% - 50px)
+    margin-top: 50px
+    display: none
+.div-two
+    width: calc(50%)
+    height: calc(100% - 50px)
+    margin-top: 50px
+    display: none
+.div-three
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+// .div-two__desktop-content
+//     display: flex
+//     flex-direction: column
+//     height: 100%
+//     width: 100%
+//     align-items: center
+#contact-button-mobile
+    display: none
+.app-main-description-mobile
+    display: none
+.app-main-description-desktop
+    display: inherit
+@media (pointer: coarse) and (hover: none)
+    .app-main-description-mobile
+        display: inherit
+    .app-main-description-desktop
+        display: none
+    .div-two__desktop-content
+        display: none
+    .background-gradient
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 5%, rgba(5,6,24,0) 20%, rgba(5,6,24,0) 80%, rgba(0,0,0,1) 100%)
+    :host
+        position: relative
+        overflow: hidden
+        flex-direction: column
+        justify-content: flex-start
+    .div-three
+        display: none
+    .div-one
         width: 100%
-        height: 500px
+        height: calc(100vh - 200px)
         display: flex
         flex-direction: row //row in mobile
         flex-grow: 0
+        margin-top: 0
         flex-shrink: 0
-        .sec-one-top__content
-            width: calc(100% - 50px)
-            height: 100%
-        .name
-            width: 50px
-            height: calc(100% - 50px - 3vh)
-            margin-top: 70px
-            margin-top: calc(50px + 3vh)
-            color: $primary-color
-            display: none
-            flex-direction: column
-            z-index: 100
-            span
-                width: auto
-                font-size: 24px
-                height: 22px
-                transform: rotate(90deg)
-                padding-left: 25px
-                line-height: 1.2
-            .color-letter
-                color: $secondary-color
-    .sec-one-bottom
+    .div-two
         width: 100%
-        height: 100%
+        height: 200px
+        margin-top: 0
         display: flex
-        justify-content: center
         flex-wrap: wrap
-        align-content: center //center in mobile
-        .content
-            display: inherit
-            flex-wrap: wrap
-            flex-direction: column
-            align-items: center
-            .description
-                width: auto
-                z-index: 200
-                font-size: 15px
-                color: #999
-                display: inherit
-                justify-content: flex-end
-                a
-                    padding-left: 10px
-                    padding-right: 10px
-                a:nth-of-type(4)
-                    padding-right: 0
-                a:visited
-                    color: #667
-                    color:#999
-                a:hover
-                    color: $secondary-color
-            #contact-button
-                width: 120px
-                height: 36px
-                border: 1px solid $primary-color
-                color: $primary-color
-                margin-top: 20px
-                font-size: 16px
-                span
-                    width: 120px
-                    height: 36px
-            #contact-button:active
-                border-color: $secondary-color
-                color: $secondary-color
-            #contact-button:hover
-                border-color: $secondary-color
-                color: $secondary-color
-            //desktop
-            // #contact-button
-            //     width: 140px
-            //     height: 39px
-            //     font-size: 18px
-            //     color: $primary-color-potente
-
-    img
+        flex-direction: column
+        justify-content: center
+        align-content: center
+        align-items: center //center in mobile
+        border: none
+    .background-image
         width: 96vw
         max-width: 680px
+        display: none
         height: auto
-        top: 15px
+        top: 155px
         left: 50%
         transform: translateX(-50%)
         position: absolute
         opacity: 16%
+    #contact-button-mobile
+        width: 120px
+        height: 36px
+        border: 1px solid #fff
+        color: #adf
+        display: block
+        margin-top: 20px
+        font-size: 16px
+        z-index: 200
+        span
+            width: 120px
+            font-weight: 800
+            height: 36px
+    // #contact-button:active
+    //     border-color: $secondary-color
+    //     color: $secondary-color
+    // #contact-button:hover
+    //     border-color: $secondary-color
+    //     color: $secondary-color
 
-@keyframes moverPaddingn1
-    from
-        padding-left: 0
-    to
-        padding-left: 6px
-@keyframes moverPaddingn2
-    from
-        padding-left: 0
-    to
-        padding-left: 10px
-@media (pointer: coarse) and (hover: none)
-    :host
-        img
-            top: 270px
-            transform: translate(-48%, -50%)
-        .sec-one-top
-            .name
-                display: flex
-            .name-desktop
-                display: none
-    .rol-name
-        margin-top: calc(50px + 3.2vh)
+//desktop
+// #contact-button
+//     width: 140px
+//     height: 39px
+//     font-size: 18px
+//     color: $primary-color-potente
+    //:host
+        // app-main-backgounrd-image
+        //     top: 270px
+        //     transform: translate(-48%, -50%)
+    //     .sec-one-top
+    //         .name
+    //             display: flex
+    //         .name-desktop
+    //             display: none
+    // .rol-name
+    //     margin-top: calc(50px + 3.2vh)
