@@ -2,20 +2,15 @@ import { Component } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 
-import { MyNameMobileComponent } from '@mol/my-name-mobile/my-name-mobile.component'
-import { MyIntroductionMobileComponent } from '@mol/my-introduction-mobile/my-introduction-mobile.component'
-import { MyIntroductionDesktopComponent } from '@mol/my-introduction-desktop/my-introduction-desktop.component'
-import { MainDescriptionComponent } from '@mol/main-description/main-description.component'
+import { MyIntroductionMobileComponent } from '@org/my-introduction-mobile/my-introduction-mobile.component'
+import { MyIntroductionDesktopComponent } from '@org/my-introduction-desktop/my-introduction-desktop.component'
 
 @Component({
   selector: 'app-main-section-one',
   standalone: true,
   imports: [
-    MyNameMobileComponent, 
     MyIntroductionMobileComponent, 
-    MyIntroductionDesktopComponent,
-    MainDescriptionComponent,
-    MatButtonModule],
+    MyIntroductionDesktopComponent],
   templateUrl: './main-section-one.component.html',
   styleUrl: './main-section-one.component.sass'
 })
