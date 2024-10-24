@@ -4,7 +4,7 @@ $secondary-color: #ff9900
 $background-color: #160b30
 $primary-color: #ccc
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,1000,2000,3000,4000,5000,6000,7000,8000,9001,1001,2001,3001,4001,5001,6001,7001,8001,900&display=swap')
+//@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,1000,2000,3000,4000,5000,6000,7000,8000,9001,1001,2001,3001,4001,5001,6001,7001,8001,900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap')
 *
     padding: 0
@@ -14,26 +14,31 @@ $primary-color: #ccc
     background: none
     box-sizing: border-box
     font-family: 'Quicksand', monospace
+html
+    scroll-behavior: smooth
 body
     background-color: #000
 .main-header-while-nav-hidden
     background-color: rgba(0, 0, 0, 0)
-    transition: background-color ease .5s
+    transition: background-color ease .5s, border-color ease .5s
+    border-bottom: 1px solid #444
 .main-header-while-nav-visible
     transition: none
     background-color: rgba(0, 0, 0, .9)
 .main-header-scrolled
     background: rgba(22, 22, 22, .7)
+    border-bottom: 1px solid #777
 .body-no-scroll
     overflow-y: hidden
 /* Modificar el ancho de la barra de desplazamiento */
 ::-webkit-scrollbar
-    width: 9px
+    width: 7px
     height: 0 /* Para scroll horizontal */
 
 /* Estilos para el "thumb" (la parte que se arrastra) */
 ::-webkit-scrollbar-thumb
     background-color: #424260
+    background-color: #afd3ff
     border-radius: 6px
     border: 3px solid transparent /* Espacio entre el thumb y el track */
 
@@ -57,7 +62,7 @@ body
 :host
     display: flex
     justify-content: center
-    width: calc(100vw - 9px)
+    width: calc(100vw - 7px)
     height: 100vh
     position: relative
 .main-header-content-desktop
