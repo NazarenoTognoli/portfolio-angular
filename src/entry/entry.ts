@@ -3,7 +3,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app.config';
 import { Component, HostListener, OnInit, inject, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importar CommonModule para usar ngClass
-
 //Components
 import { MainPageComponent } from '@page/main-page/main-page.component';
 import { MainHeaderComponent } from '@org/main-header/main-header.component';
