@@ -1,7 +1,15 @@
+#border-bottom
+    position: absolute
+    width: 100%
+    height: 1px
+    bottom: 0
+    left: 0
+    background: linear-gradient(to right, #000 0%, #777 50%, #000 100%)
 :host
     width: 100%
     height: auto
     height: 100%
+    position: relative
     // min-height: 100vh
     // max-height: 970px
     display: flex
@@ -12,90 +20,165 @@
     width: 100%
     height: auto
     display: flex
-    justify-content: space-around
+    justify-content: center
     align-items: center
     margin-top: 50px
 .image-container
-    width: 35vw
-    height: 35vw
-    max-width: 350px
-    max-height: 350px
-    outline: 1px solid #444
-    background: rgba(22, 22, 22, .7)
+    margin-left: 70px
+    width: 18vw
+    height: 18vw
+    max-width: 270px
+    max-height: 270px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    //outline: 1px solid #444
+    //background: rgba(22, 22, 22, .7)
+    //transform: translateX(-50px)
+    svg
+        fill: #ddd
+        height: 100%
+        width: 100%
+.image-shadow
+    width: 1px
+    height: 1px
+    position: absolute
+    box-shadow: 0px 0px 150px 75px #adf
+.image-container-small-resolutions
+    margin-top: 30px
+    width: 20vw
+    height: 20vw
+    max-width: 150px
+    max-height: 150px
+    justify-content: center
+    align-items: center
+    position: relative
+    display: none
+    svg
+        fill: #ddd
+        height: 100%
+        width: 100%
+    .image-shadow
+        box-shadow: 0px 0px 110px 30px #adf
 .slider
     width: 50%
-    height: 500px
-    display: flex
-.slider__controller
-    width: 50px
-    height: 100%
+    max-width: 850px
+    height: 420px
     display: flex
     flex-direction: column
+.slider__controller
+    width: 100%
+    height: 50px
+    display: flex
+    flex-direction: row
     justify-content: space-between
+//==============================================
 .backend-btn-container
-    height: 202px
-    width: 100%
+    height: 50px
+    width: 40%
+    max-width: 250px
+    min-width: 150px
     background: #777
-    clip-path: polygon(0% 0%, 100% 0, 100% 85%, 0% 100%)
+    clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0% 100%)
 .frontend-btn-container
-    height: 202px
-    width: 100%
+    height: 50px
+    width: 40%
+    max-width: 250px
+    min-width: 150px
     background: #777
-    clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0 100%)
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)
+//================================================
 .outside-btn
-    background: rgba(22, 22, 22, .7)
-    height: 200px
-    width: calc(100% - 1px)
-    background: #000
+    //background: rgba(22, 22, 22, .7)
+    height: 49px
+    width: 218px
+    width: calc(100% - 2px)
+    max-width: 248px
+    min-width: 148px
+    background: #111
+    margin-top: 1px
 .outside-btn:hover
     cursor: pointer
+//===========================================================
 .backend-btn
-    margin-top: 1px 
-    clip-path: polygon(0% 0%, 100% 0, 100% 85%, 0% 100%)
+    clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0% 100%)
     background: #777
     position: relative
+    margin-top: 1px
+    margin-left: 1px
     span
         top: 80px
         left: -20px
         display: block
         width: auto
-        font-size: 22px
-        position: absolute
-        transform: rotate(90deg)
+        font-size: clamp(17px, 1.8vw, 30px)
+        padding-right: 7px
+        //position: absolute
+        //transform: rotate(90deg)
         color: #000
         font-weight: 700
 .frontend-btn
-    margin-top: 1px
-    clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0 100%)
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)
     position: relative
+    //height: 49px
+    //width: 218px
+    margin-left: 1px
+    margin-top: 1px
     span
-        color: #afd3ff
+        color: #ddd
         top: 92px
         left: -22px
         display: block
         width: auto
-        font-size: 22px
-        position: absolute
-        transform: rotate(90deg)
+        padding-left: 7px
+        font-size: 24px
+        font-size: clamp(17px, 1.8vw, 30px)
+        //position: absolute
+        //transform: rotate(90deg)
         font-weight: 700
-
+//==============================================
 .slider__content
-    width: calc(100% - 50px)
+    width: 100%
     height: 100%
     display: flex
     border: 1px solid #777
     background: rgba(22, 22, 22, .7)
-.left-btn-container, .right-btn-container, .txt-container
-    //outline: 1px solid #444
-.left-btn-container
-    width: 40px
-    height: 100%
+//=================================
 .txt-container
     width: 100%
     height: 100%
-    color: #999
     display: flex
     align-items: center
-.right-btn-container
-    width: 40px
-    height: 100%
+    text-align: center
+    justify-content: center
+    flex-direction: column
+    padding-left: 10px
+    padding-right: 10px
+.title
+    color: #fff
+    font-size: 26px
+    padding-bottom: 5px
+    .color
+        color: #afd
+        color: #afd3ff
+        font-weight: 500
+        text-shadow: 0px 0px 14px #adf
+.txt
+    color: #999
+    font-size: 19px
+    font-weight: 200
+
+@media (max-width: 700px)
+    .flexbox-container
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        margin-top: 0
+    .slider
+        width: 90%
+        height: 450px
+    .image-container
+        display: none
+    .image-container-small-resolutions
+        display: flex
