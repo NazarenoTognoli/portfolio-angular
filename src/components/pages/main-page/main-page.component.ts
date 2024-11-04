@@ -33,6 +33,8 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
   @ViewChild('sec2') sec2!: ElementRef;
   @ViewChild('sec3') sec3!: ElementRef;
 
+  @ViewChild('backgroundVideo') backgroundVideo!: ElementRef<HTMLVideoElement>;
+
   sectionIndex = 0;
   upBtn():undefined {
     if (this.sectionIndex === 0) {
@@ -61,6 +63,9 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
     const videos: NodeListOf<HTMLVideoElement> = document.querySelectorAll('.background-video'); // Fixed typo in selector
 
     videos.forEach((video) => {
+      video.addEventListener('loadeddata', () => {
+        video.style.opacity = '0.2';
+      });
       video.oncanplaythrough = () => {
         video.muted = true;
         video.play().catch(error => {
