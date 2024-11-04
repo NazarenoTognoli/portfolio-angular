@@ -5,68 +5,63 @@
     bottom: 0
     left: 0
     background: linear-gradient(to right, #000 0%, #777 50%, #000 100%)
+
 :host
-    width: 100%
-    height: auto
-    height: 100%
     position: relative
-    // min-height: 100vh
-    // max-height: 970px
     display: flex
     align-items: center
+    width: 100%
+    height: 100%
 //prueba
 //code runnner
+@keyframes stats-container-scroll-anim2
+    0%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    15%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    45%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    60%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    100%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
 .flexbox-container
     width: 100%
     height: auto
     display: flex
     justify-content: center
     align-items: center
+    position: relative
     margin-top: 50px
-.image-container
-    margin-left: 70px
-    width: 18vw
-    height: 18vw
-    max-width: 270px
-    max-height: 270px
-    display: flex
-    justify-content: center
-    align-items: center
-    position: relative
-    //outline: 1px solid #444
-    //background: rgba(22, 22, 22, .7)
-    //transform: translateX(-50px)
-    svg
-        fill: #ddd
-        height: 100%
-        width: 100%
-.image-shadow
-    width: 1px
-    height: 1px
-    position: absolute
-    box-shadow: 0px 0px 150px 75px #adf
-.image-container-small-resolutions
-    margin-top: 30px
-    width: 20vw
-    height: 20vw
-    max-width: 150px
-    max-height: 150px
-    justify-content: center
-    align-items: center
-    position: relative
-    display: none
-    svg
-        fill: #ddd
-        height: 100%
-        width: 100%
-    .image-shadow
-        box-shadow: 0px 0px 110px 30px #adf
+    view-timeline-name: --lol-l
+    view-timeline-axis: block
+    animation-timeline: --lol-l
+    animation-name: stats-container-scroll-anim2
+    animation-range: entry 0% cover 100%
+    animation-direction: alternate
+    animation-fill-mode: both
+.flexbox-container--not-chrome
+    animation: none
+@media (min-width: 3500px)
+    .flexbox-container
+        animation-name: none
 .slider
     width: 50%
-    max-width: 850px
-    height: 420px
+    max-width: 800px
+    height: 450px
     display: flex
     flex-direction: column
+
 .slider__controller
     width: 100%
     height: 50px
@@ -98,12 +93,9 @@
     min-width: 148px
     background: #111
     margin-top: 1px
-.outside-btn:hover
-    cursor: pointer
 //===========================================================
 .backend-btn
     clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0% 100%)
-    background: #777
     position: relative
     margin-top: 1px
     margin-left: 1px
@@ -116,17 +108,18 @@
         padding-right: 7px
         //position: absolute
         //transform: rotate(90deg)
-        color: #000
-        font-weight: 700
+        color: #ddd
+        font-weight: 600
 .frontend-btn
     clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)
     position: relative
+    background: #777
     //height: 49px
     //width: 218px
     margin-left: 1px
     margin-top: 1px
     span
-        color: #ddd
+        color: #000
         top: 92px
         left: -22px
         display: block
@@ -153,11 +146,11 @@
     text-align: center
     justify-content: center
     flex-direction: column
-    padding-left: 10px
-    padding-right: 10px
+    padding-left: 30px
+    padding-right: 30px
 .title
     color: #fff
-    font-size: 26px
+    font-size: 28px
     padding-bottom: 5px
     .color
         color: #afd
@@ -166,9 +159,36 @@
         text-shadow: 0px 0px 14px #adf
 .txt
     color: #999
-    font-size: 19px
+    font-size: 21px
     font-weight: 200
 
+.slider-image-large
+    display: flex
+    opacity: 0
+    transition: opacity 1s ease, filter 1s ease
+    width: 18vw
+    height: 18vw
+    max-width: 270px
+    max-height: 270px
+    margin-left: 70px
+    margin-top: 0
+.slider-image-small
+    display: none
+    opacity: 0
+    transition: opacity 1s ease, filter 1s ease
+    width: 18vw
+    height: 18vw
+    max-width: 150px
+    max-height: 150px
+    margin-top: 30px
+    min-width: 90px
+    min-height: 90px
+.txt, .title
+    opacity: 0
+    transition: opacity 1s ease, filter 1s ease
+
+.slider-opacity
+    opacity: 1
 @media (max-width: 700px)
     .flexbox-container
         flex-direction: column
@@ -177,8 +197,12 @@
         margin-top: 0
     .slider
         width: 90%
-        height: 450px
-    .image-container
+        height: 470px
+    .slider-image-large
         display: none
-    .image-container-small-resolutions
+    .slider-image-small
         display: flex
+    .title
+        font-size: 26px
+    .txt
+        font-size: 19px

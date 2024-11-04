@@ -27,7 +27,25 @@
     grid-template-rows: 1fr
     align-items: center
     justify-items: center
-#content
+
+@keyframes stats-container-scroll-anim3
+    50%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    60%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    80%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    100%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+.content
     width: auto
     grid-column-start: 0
     height: auto
@@ -39,6 +57,17 @@
     //background: rgba(22, 22, 22, .7)
     padding: 10px
     z-index: 200
+    view-timeline-name: --lol-l
+    view-timeline-axis: block
+    animation-timeline: --lol-l
+    animation-name: stats-container-scroll-anim3
+    animation-range: entry 0% cover 100%
+    animation-fill-mode: both
+.content--not-chrome
+    animation: none
+@media (min-width: 3500px)
+    #content
+        animation-name: none
     //outline: 1px solid #444
 // .top-content
 //     width: 100%
@@ -112,21 +141,9 @@
     box-shadow: 0px 0px 15px 5px rgba(0,0,0,1)
     //box-shadow: 0px 0px 15px 5px rgba(22, 22, 22, 1.0)
     transition: color .6s ease, border-color .6s ease, fill .6s ease, box-shadow .7s ease-in-out, background-color .6s ease
-    .text
-        font-size: 16px
-        width: 105px
-        font-weight: 700
-        height: 20px
-.button-content
-    display: flex
-    align-items: center
-#contact-button-desktop__icon
-    display: inline
-    width: 30px
-    height: 30px
 #contact-button-desktop:hover
     border-color: #fff
-    background: #111
+    background: #040408
     color: #fff
     fill: #fff
     box-shadow: 0px 0px 7px 1px #afd3ff

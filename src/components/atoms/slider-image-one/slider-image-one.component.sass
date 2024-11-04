@@ -1,0 +1,46 @@
+@keyframes avanzar
+  0%
+    transform: translateX(3px)
+  50%
+    transform: translateX(-2px)
+  100%
+    transform: translateX(3px)
+:host
+    //margin-left: 70px
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    //outline: 1px solid #444
+    //background: rgba(22, 22, 22, .7)
+    //transform: translateX(-50px)
+.image-shadow
+    width: 1px
+    height: 1px
+    position: absolute
+    box-shadow: 0px 0px 150px 75px #adf
+svg
+    fill: #ddd
+    height: 100%
+    width: 100%
+    animation: avanzar 3s ease-in-out infinite
+@media (max-width: 700px)
+    :host
+        margin-top: 30px
+        margin-left: 0
+        width: 20vw
+        height: 20vw
+        max-width: 150px
+        max-height: 150px
+        justify-content: center
+        align-items: center
+        position: relative
+        display: none
+    svg
+        fill: #ddd
+        height: 100%
+        width: 100%
+    .image-shadow
+        box-shadow: 0px 0px 110px 30px #adf

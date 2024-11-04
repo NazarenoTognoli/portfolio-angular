@@ -12,6 +12,32 @@
     align-items: center
     width: 100%
     height: 100%
+@keyframes stats-container-scroll-anim
+    from
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    to
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+@keyframes stats-container-scroll-anim2
+    0%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    15%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    35%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    100%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
 .stats-container
     margin-top: 50px
     width: 90%
@@ -20,6 +46,17 @@
     position: relative
     display: flex
     flex-direction: column
+    view-timeline-name: --stats-container
+    view-timeline-axis: block
+    animation-timeline: --stats-container
+    animation-name: stats-container-scroll-anim2
+    animation-range: entry 0% cover 100%
+    animation-fill-mode: both
+.stats-container--not-chrome
+    animation: none
+@media (min-width: 3500px)
+    .stats-container
+        animation-name: none
 #reminder
     display: flex
     position: absolute
@@ -57,12 +94,20 @@
         font-size: 25px
         font-weight: 600
         color: #ddd
+
 .stats-body
     height: calc(100% - 50px)
     width: 100%
     border: 1px solid #777
     background: rgba(22, 22, 22, .7)
     position: relative
+
+@keyframes stat-bar-charge-default-width
+    from
+        width: 10%
+    to
+        width: 80%
+
 .stat-bar
     width: 80%
     height: 20px

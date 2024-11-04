@@ -1,6 +1,6 @@
 <div id="border-bottom">
 </div>
-<div class="stats-container">
+<div class="stats-container" [ngClass]="{'stats-container--not-chrome': this.isNotChrome()}">
     <div id="reminder">
         <span>data is not representative</span>
     </div>
@@ -28,10 +28,16 @@
             <span class="stat-name">Angular</span>
         </div>
         <div class="stat-bar">
+            <span class="stat-name">MongoDB</span>
+        </div>
+        <div class="stat-bar">
             <span class="stat-name">Javascript</span>
         </div>
         <div class="stat-bar">
             <span class="stat-name">React</span>
+        </div>
+        <div class="stat-bar">
+            <span class="stat-name">SQL</span>
         </div>
         <div class="pt-10 pt">
             10%
