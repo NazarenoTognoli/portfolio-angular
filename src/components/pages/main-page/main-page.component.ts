@@ -33,13 +33,9 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
   @ViewChild('sec2') sec2!: ElementRef;
   @ViewChild('sec3') sec3!: ElementRef;
 
-  @ViewChild('backgroundVideo') backgroundVideo!: ElementRef<HTMLVideoElement>;
-
   sectionIndex = 0;
   upBtn():undefined {
-    if (this.sectionIndex === 0) {
-      return
-    }
+    if (this.sectionIndex === 0) return;
     else if (this.sectionIndex === 1){
       window.location.hash = ''; //reset default
       window.location.hash = 'sec0';
@@ -64,7 +60,7 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
 
     videos.forEach((video) => {
       video.addEventListener('loadeddata', () => {
-        video.style.opacity = '0.2';
+        video.style.opacity = '.2';
       });
       video.oncanplaythrough = () => {
         video.muted = true;
