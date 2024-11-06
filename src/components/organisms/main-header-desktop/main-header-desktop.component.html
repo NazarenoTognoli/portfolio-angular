@@ -2,7 +2,17 @@
   <span>NET</span>  
 </a>
 <div class="links">
-    <a href="">About me</a>
+    <a href="">Details</a>
     <a href="">Projects</a>
-    <a href="">Contact</a>     
+    <a href="">Contact</a>
+    <a (click)="darkMode = !darkMode">
+      <div [ngClass]="{'dark-mode-icon-true': darkMode}" darkModeIcon class="dark-mode-icon"></div>
+      <div [ngClass]="{'light-mode-icon-true': !darkMode}" lightModeIcon class="light-mode-icon"></div>
+      <div class="circle-icon" circleIcon></div>
+    </a>
+    <a (click)='usFlag = !usFlag'>
+      <div usFlag class="us-flag" [ngClass]="{'us-flag-true': usFlag}"></div>
+      <div arFlag class="ar-flag" [ngClass]="{'ar-flag-true': !usFlag}"></div>
+      <div switchIcon class="switch-icon"></div>
+    </a>
 </div>

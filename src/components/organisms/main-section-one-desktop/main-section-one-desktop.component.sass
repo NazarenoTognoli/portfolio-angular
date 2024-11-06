@@ -5,6 +5,47 @@
     bottom: 0
     left: 0
     background: linear-gradient(to right, #000 0%, #777 50%, #000 100%)
+.div-layout-2
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    width: 450px
+    justify-content: space-around
+    button
+        height: clamp(30px, 6vw, 40px)
+        width: clamp(100px, 20vw, 135px)
+        border: 1px solid #afd3ff
+        display: block
+        //margin-top: 20px
+        margin-top: 20px
+        //margin-left: 10px
+        z-index: 200
+        color: #afd3ff
+        fill: #afd3ff
+        //background: #182833
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,1)
+        //box-shadow: 0px 0px 15px 5px rgba(22, 22, 22, 1.0)
+        transition: color .6s ease, border-color .6s ease, fill .6s ease, box-shadow .7s ease-in-out, background-color .6s ease
+    button:nth-of-type(2), button:nth-of-type(1)
+        fill: #e7ff4d
+        color: #e7ff4d
+        border-color: #e7ff4d
+        fill: #aaa
+        color: #aaa
+        border-color: #aaa
+        transition: .3s
+    // button:nth-of-type(1)
+    //     fill: #b84dff
+    //     color: #b84dff
+    //     border-color: #b84dff
+    button:hover, button:nth-of-type(2):hover, button:nth-of-type(1):hover
+        border-color: #fff
+        color: #fff
+        fill: #fff
+        box-shadow: 0px 0px 7px 1px #afd3ff
+    button:nth-of-type(2):hover, button:nth-of-type(1):hover
+        box-shadow: none
+
 @keyframes moverPaddingn1
     from
         padding-left: 10px
@@ -82,8 +123,9 @@
     width: 100%
     justify-content: center
     background: rgba(22, 22, 22, .7)
+    //background: rgba(22, 22, 22, .7)
     //background: #182833
-    outline: 1px solid #777
+    outline: 1px solid #444
     //background: rgba(200, 0, 0, .5)
     //border-left: 1px solid #adf
 .photo-text
@@ -108,15 +150,17 @@
     margin-left: 25px
     width: calc(100% - 200px)
 .char
-    background: rgba(22, 22, 22, .7)
+    //background: rgba(22, 22, 22, .7)
     //background: #182833
     //background: rgba(0, 0, 0, .7)
+    background: rgba(22, 22, 22, .7)
     font-size: 24px
+    font-size: clamp(19px, 3vw, 24px)
     color: #fff
     padding-left: 10px
     margin-top: 10px
     position: relative
-    outline: 1px solid #777
+    outline: 1px solid #444
     //border-left: 1px solid #adf
 .char:nth-of-type(2)
     color: #afd3ff
@@ -126,27 +170,6 @@
     animation: moverPaddingn2 1.5s ease-in-out forwards
 .char:nth-of-type(3)
     animation: moverPaddingn1 1s ease-in-out forwards
-#contact-button-desktop
-    width: 135px
-    height: 40px
-    border: 1px solid #afd3ff
-    display: block
-    //margin-top: 20px
-    margin-top: 20px
-    //margin-left: 10px
-    z-index: 200
-    color: #afd3ff
-    fill: #afd3ff
-    //background: #182833
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,1)
-    //box-shadow: 0px 0px 15px 5px rgba(22, 22, 22, 1.0)
-    transition: color .6s ease, border-color .6s ease, fill .6s ease, box-shadow .7s ease-in-out, background-color .6s ease
-#contact-button-desktop:hover
-    border-color: #fff
-    background: #040408
-    color: #fff
-    fill: #fff
-    box-shadow: 0px 0px 7px 1px #afd3ff
 @media (pointer: coarse) and (hover: none)
     :host
         display: none

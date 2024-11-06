@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importar CommonModule para usar ngClass
+//import SmoothScroll from 'smooth-scroll'; npm i @types/smooth-scroll npm i smooth-scroll (for browser with disabled scroll-smooth)
+import { CommonModule } from '@angular/common'; // Importar CommonModule para usar ngClass s
 import { ScrollTrackerService } from '@srv/scroll-tracker.service';
 
 import { MainSectionOneDesktopComponent } from '@org/main-section-one-desktop/main-section-one-desktop.component';
@@ -40,22 +41,32 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
       window.location.hash = ''; //reset default
       window.location.hash = 'sec0';
     } else if (this.sectionIndex === 2) {
-      window.location.hash = ''; //reset default 
+      window.location.hash = ''; //reset default
+      //this.scrollToSection(this.sec2);
       window.location.hash = 'sec1';
     }
   }
   downBtn():undefined {
     if (this.sectionIndex === 2) return;
     else if (this.sectionIndex === 0){
-      window.location.hash = ''; //reset default 
+      window.location.hash = ''; //reset default
+      //this.scrollToSection(this.sec2);
       window.location.hash = 'sec1';
     } else if (this.sectionIndex === 1) {
-      window.location.hash = ''; //reset default 
+      window.location.hash = ''; //reset default
+      //this.scrollToSection(this.sec3); 
       window.location.hash = 'sec2';
     }
   }
-
   ngAfterViewInit(): void { // Using Angular lifecycle hook
+    // const scroll = new SmoothScroll('a[href*="#"]', {
+    //   speed: 3000,
+    //   speedAsDuration: true
+    // });
+    // setTimeout(()=>{
+    //   console.log("exeeeeee");
+    //   scroll.animateScroll(document.querySelector('#sec1'));
+    // }, 5000);
     const videos: NodeListOf<HTMLVideoElement> = document.querySelectorAll('.background-video'); // Fixed typo in selector
 
     videos.forEach((video) => {
@@ -67,9 +78,11 @@ export class MainPageComponent implements AfterViewInit { // Implementing AfterV
         video.play().catch(error => {
           //console.error("Video playback failed:", error);
           this.showPlaybackError();
+          video.style.display = 'none';
         });
       };
     });
+
     // Calcula las posiciones de cada sección
     const sectionOffsets = [
       this.sec1.nativeElement.offsetTop,

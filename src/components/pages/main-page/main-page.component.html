@@ -1,6 +1,6 @@
 <div class="notification" [ngClass]="getNotificationClasses()">Video playback is restricted in your browser. Please enable autoplay for a better experience.</div>
-<app-up-btn id="up-btn" (click)="upBtn()"></app-up-btn>
-<app-down-btn id="down-btn" (click)="downBtn()"></app-down-btn>
+<app-up-btn id="up-btn" (click)="upBtn()" title="it may make a jerky movement if you don't have chrome://flags/#smooth-scrolling enabled"></app-up-btn>
+<app-down-btn id="down-btn" (click)="downBtn()" title="it may make a jerky movement if you don't have chrome://flags/#smooth-scrolling enabled"></app-down-btn>
 <section class="main-section-one-container section" id="sec0" #sec1>
     <app-main-section-one-desktop></app-main-section-one-desktop>
     <app-main-section-one-mobile></app-main-section-one-mobile>
