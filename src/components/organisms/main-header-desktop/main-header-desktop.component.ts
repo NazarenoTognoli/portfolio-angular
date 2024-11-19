@@ -6,6 +6,8 @@ import { SwitchComponent } from '@atom/switch/switch.component';
 import { LightModeIconComponent } from '@atom/light-mode-icon/light-mode-icon.component';
 import { DarkModeIconComponent } from '@atom/dark-mode-icon/dark-mode-icon.component';
 import { CircleIconComponent } from '@atom/circle-icon/circle-icon.component';
+import { MobileHomeButtonComponent } from '@atom/mobile-home-button/mobile-home-button.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-header-desktop',
@@ -17,11 +19,13 @@ import { CircleIconComponent } from '@atom/circle-icon/circle-icon.component';
     CommonModule, 
     LightModeIconComponent,
     DarkModeIconComponent,
-    CircleIconComponent],
+    CircleIconComponent,
+    RouterModule,
+    MobileHomeButtonComponent],
   templateUrl: './main-header-desktop.component.html',
   styleUrl: './main-header-desktop.component.sass'
 })
 export class MainHeaderDesktopComponent {
   usFlag: boolean = true;
-  darkMode: boolean = false;
+  darkMode: boolean = true;
 }

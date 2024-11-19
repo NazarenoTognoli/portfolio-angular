@@ -2,22 +2,33 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app.config';
 import { Component, HostListener, OnInit, inject, Renderer2 } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importar CommonModule para usar ngClass
-//Components
-import { MainPageComponent } from '@page/main-page/main-page.component';
-import { MainHeaderComponent } from '@org/main-header/main-header.component';
-import { MobileNavComponent } from '@org/mobile-nav/mobile-nav.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes, provideRouter } from '@angular/router';
 //Services
 import { MobileNavDisplayService } from '@srv/mobile-nav-display.service';
+//Components
+import { MainComponent } from '@page/main/main.component';
+import { DetailsComponent } from '@page/details/details.component';
+import { ProjectsComponent } from '@page/projects/projects.component';
+import { ContactComponent } from '@page/contact/contact.component';
+import { MainHeaderComponent } from '@org/main-header/main-header.component';
+import { MobileNavComponent } from '@org/mobile-nav/mobile-nav.component';
+// Definimos las rutas
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'details', component: DetailsComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'contact', component: ContactComponent }
+];
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    MainPageComponent, 
+  imports: [ 
     MainHeaderComponent,
     MobileNavComponent,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   templateUrl: './entry.html',
   styleUrls: ['./entry.sass']
@@ -51,5 +62,9 @@ export class AppComponent implements OnInit {
   }
 }
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+// Usamos bootstrapApplication para iniciar la app con enrutamiento
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes)
+  ]
+}).catch(err => console.error(err));

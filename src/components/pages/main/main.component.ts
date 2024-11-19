@@ -13,7 +13,7 @@ import { MainSectionOneMobileComponent } from '@org/main-section-one-mobile/main
 
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-main',
   standalone: true,
   imports: [ 
     MainSectionOneMobileComponent, 
@@ -23,10 +23,10 @@ import { MainSectionOneMobileComponent } from '@org/main-section-one-mobile/main
     UpBtnComponent,
     DownBtnComponent,
     CommonModule],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.sass'
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.sass'
 })
-export class MainPageComponent implements AfterViewInit { // Implementing AfterViewInit
+export class MainComponent implements AfterViewInit { // Implementing AfterViewInit
   notificationAppear: boolean = false;
   notificationDisappear: boolean = false;
 

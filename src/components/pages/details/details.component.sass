@@ -1,0 +1,194 @@
+:host
+    position: relative
+.shadow
+    position: fixed
+    width: 100vw
+    height: 50px
+    top: calc(100vh - 50px)
+    background: linear-gradient(to top, #000 0%, transparent 100%)
+    z-index: 100
+.arrow
+    position: absolute
+    left: -5.5px
+    bottom: -3px
+    width: 10px
+    height: 10px
+    background: #adf
+    clip-path: polygon(50% 100%, 0 0, 100% 0)
+.arrow-bottom
+    clip-path: none
+    //border-radius: 100%
+    bottom: -8px
+    left: -4.5px
+    width: 9px
+    height: 9px
+:host
+    display: flex
+    position: relative
+    width: calc(100vw - 7px)
+    max-width: 1900px
+    background: #000
+    justify-content: center
+.first-view, .second-view, .third-view
+    width: 100%
+    height: auto
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    //min-height: 100vh
+.first-view
+    align-items: flex-start
+    //min-height: calc(100vh - 50px)
+.body
+    color: #fff
+    min-height: 100vh
+    width: 70%
+    min-width: 350px
+    max-width: 1300px
+    height: auto
+    display: flex
+    flex-direction: column
+    position: relative
+    section
+        //margin: 5px 10px 5px 10px
+        //outline: 1px solid #444
+        padding: 90px 0 50px 0
+        //background: rgba(22, 22, 22, .7)
+        h2
+            font-size: 24px
+            font-size: 40px
+            font-weight: 400
+            //background: linear-gradient(to right, #222 0%, #000 400px)
+            background: #111
+            outline: 1px solid #444
+            color: #ADF
+            padding: 4px 0px 4px 10px
+            text-shadow: 0px 0px 10px #ADF
+            color: #DDD
+            text-shadow: none
+            letter-spacing: 5px
+        h3
+            font-size: 19px
+            font-weight: 500
+    // .experience-section
+    //     margin-top: 50px
+    // section:nth-of-type(1)
+    //     margin-top: 10px
+    // section:nth-of-type(2)
+    //     margin-right: 5px
+    // section:nth-of-type(3)
+    //     margin-left: 5px
+.color-letter
+    color: #ADF
+    text-shadow: 0px 0px 20px #ADF
+    font-weight: 500
+.experience-section
+    display: flex
+    flex-direction: column
+    .title
+        color: #bbb
+        padding: 0px 30px 0px 10px
+        background: #222
+        display: inline-block
+        clip-path: polygon(0% 0%, 100% 0, calc(100% - 20px) 100%, 0% 100%)
+    .non-formal-record
+        .record
+            margin-top: 20px
+            margin-left: 10px
+            border-left: 1px solid #ADF
+            padding-left: 10px
+            position: relative
+        .year
+            display: flex
+            align-items: center
+            background: #222
+            min-width: 60px
+            max-height: 20px
+            margin-right: 5px
+            float: left
+            div:nth-of-type(1)
+                width: 6px
+                height: 6px
+                border-radius: 100%
+                background: #ADF
+                margin-left: 5px
+            div:nth-of-type(2)
+                padding-left: 5px
+                font-weight: 500
+                color: #fff
+        .content
+            font-size: 15px
+            color: #fff
+.education-section
+    width: 100%
+    margin-right: 5px
+    .title
+        color: #bbb
+        padding: 0px 30px 0px 10px
+        background: #222
+        display: inline-block
+        clip-path: polygon(0% 0%, 100% 0, calc(100% - 20px) 100%, 0% 100%)
+    .formal-education
+        .item            
+            margin-top: 10px
+            margin-left: 10px
+            border-left: 1px solid #ADF
+            padding-left: 10px
+            position: relative
+        .year
+            display: flex
+            align-items: center
+            background: #222
+            min-width: 97px
+            max-height: 20px
+            margin-right: 5px
+            float: left
+            div:nth-of-type(1)
+                width: 6px
+                height: 6px
+                border-radius: 100%
+                background: #ADF
+                margin-left: 5px
+            div:nth-of-type(2)
+                padding-left: 5px
+                font-weight: 500
+                color: #fff
+        .content
+            font-size: 15px
+            color: #fff
+    .non-formal-record
+        .record
+            margin-top: 10px
+            margin-left: 10px
+            border-left: 1px solid #ADF
+            padding-left: 10px
+            position: relative
+        .year
+            display: flex
+            align-items: center
+            background: #222
+            width: 60px
+            max-height: 20px
+            float: left
+            margin-right: 5px
+            div:nth-of-type(1)
+                width: 6px
+                height: 6px
+                border-radius: 100%
+                background: #ADF
+                margin-left: 5px
+            div:nth-of-type(2)
+                padding-left: 5px
+                font-weight: 600
+        .content
+            font-size: 15px
+            color: #fff
+.about-me-section
+    width: 100%
+    margin-left: 5px
+    .content
+        padding: 10px
+.non-formal-record, .formal-education
+    margin-top: 10px
+
+

@@ -3,48 +3,82 @@
 <div class="flexbox-container" [ngClass]="{'flexbox-container--not-chrome': this.isNotChrome()}">
     <div class="slider">
         <div class="slider__controller">
-            <div class="backend-btn-container">    
-                <button class="backend-btn outside-btn"><span>In-House</span></button>
+            <div class="in-house-btn-container">    
+                <button class="in-house-btn outside-btn" [ngClass]="{'in-house-btn--active': sliderInHouse}" (click)="sliderInHouse = true"><span>In-House</span></button>
             </div>
-            <div class="frontend-btn-container">
-                <button class="frontend-btn outside-btn"><span>Freelance</span></button>
+            <div class="freelance-btn-container">
+                <button class="freelance-btn outside-btn" [ngClass]="{'freelance-btn--active': !sliderInHouse}" (click)="sliderInHouse = false"><span>Freelance</span></button>
             </div>
         </div>
         <div class="slider__content">
             <div class="txt-container">
-                <span class="title" *ngIf="sliderShowOne" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="title" *ngIf="sliderShowOne && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Designing the <span class="color">future</span> of your <span class="color">digital brand</span> with seamless functionality 
                 </span>
-                <span class="txt" *ngIf="sliderShowOne" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="txt" *ngIf="sliderShowOne && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Our dynamic approach anticipates tomorrow’s trends today, blending form and function to create lasting impressions on every platform
                 </span>
-                <span class="title" *ngIf="sliderShowTwo" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="title" *ngIf="sliderShowTwo && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Bringing your <span class="color">vision to life</span> with <span class="color">cutting-edge solutions</span>
                 </span>
-                <span class="txt" *ngIf="sliderShowTwo" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="txt" *ngIf="sliderShowTwo && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Our innovative techniques align with your goals, pushing the boundaries of what's possible, no matter where you're starting from
                 </span>
-                <span class="title" *ngIf="sliderShowThree" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="title" *ngIf="sliderShowThree && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Unlocking <span class="color">new possibilities</span> through tailored <span class="color">web innovations</span>
                 </span>
-                <span class="txt" *ngIf="sliderShowThree" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="txt" *ngIf="sliderShowThree && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     We fuse creativity with technology to open doors you didn’t even know existed, designed specifically for the way your business evolves
                 </span>
-                <span class="title" *ngIf="sliderShowFour" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="title" *ngIf="sliderShowFour && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     Crafting <span class="color">digital experiences</span> that transform your <span class="color">online presence</span>
                 </span>
-                <span class="txt" *ngIf="sliderShowFour" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                <span class="txt" *ngIf="sliderShowFour && !sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
                     From captivating visuals to behind-the-scenes architecture, our approach adapts to the unique essence of your brand, ensuring each interaction resonates with impact
                 </span>
-                <app-slider-image-one *ngIf="sliderShowOne" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-one>
-                <app-slider-image-two *ngIf="sliderShowTwo" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-two>
-                <app-slider-image-three *ngIf="sliderShowThree" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-three>
-                <app-slider-image-four *ngIf="sliderShowFour" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-four>
+                <!-- ============================================================ -->
+                <span class="title" *ngIf="sliderShowOne && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    Building a <span class="color">shared vision</span> through <span class="color">collaborative synergy</span>
+                </span>
+                <span class="txt" *ngIf="sliderShowOne && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    I value teamwork and transparent communication, creating a foundation where each voice drives us toward collective growth and shared success.
+                </span>
+                <span class="title" *ngIf="sliderShowTwo && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    Embracing <span class="color">adaptability</span> in a <span class="color">constantly evolving environment</span>
+                </span>
+                <span class="txt" *ngIf="sliderShowTwo && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                     I stay flexible and open to new challenges, adapting swiftly to shifts in direction and embracing each opportunity to grow with resilience.
+                </span>
+                <span class="title" *ngIf="sliderShowThree && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    Nurturing a <span class="color">culture of innovation</span> through <span class="color">empathy and respect</span>
+                </span>
+                <span class="txt" *ngIf="sliderShowThree && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    By fostering a supportive environment, I am empowered to share my unique perspective, sparking meaningful change through collaboration.
+                </span>
+                <span class="title" *ngIf="sliderShowFour && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    Empowering <span class="color">continuous learning</span> within a <span class="color">dynamic workplace</span>
+                </span>
+                <span class="txt" *ngIf="sliderShowFour && sliderInHouse" [ngClass]="{ 'slider-opacity': sliderOpacity }">
+                    My dedication to personal and professional growth fuels my curiosity and inspires me to embrace lifelong learning, adapting as the workplace evolves.
+                </span>
+                <app-slider-image-one *ngIf="sliderShowOne && !sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-one>
+                <app-slider-image-two *ngIf="sliderShowTwo && !sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-two>
+                <app-slider-image-three *ngIf="sliderShowThree && !sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-three>
+                <app-slider-image-four *ngIf="sliderShowFour && !sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-four>
+                <!-- ============================================================================================= -->
+                <app-slider-image-five *ngIf="sliderShowOne && sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-five>
+                <app-slider-image-six *ngIf="sliderShowTwo && sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-six>
+                <app-slider-image-seven *ngIf="sliderShowThree && sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-seven>
+                <app-slider-image-eight *ngIf="sliderShowFour && sliderInHouse" class="slider-image-small" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-eight>
             </div>   
         </div>
     </div>
-    <app-slider-image-one *ngIf="sliderShowOne" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-one>
-    <app-slider-image-two *ngIf="sliderShowTwo" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-two>
-    <app-slider-image-three *ngIf="sliderShowThree" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-three>
-    <app-slider-image-four *ngIf="sliderShowFour" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-four>
+    <app-slider-image-one *ngIf="sliderShowOne && !sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-one>
+    <app-slider-image-two *ngIf="sliderShowTwo && !sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-two>
+    <app-slider-image-three *ngIf="sliderShowThree && !sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-three>
+    <app-slider-image-four *ngIf="sliderShowFour && !sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-four>
+    <app-slider-image-five *ngIf="sliderShowOne && sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-five>
+    <app-slider-image-six *ngIf="sliderShowTwo && sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-six>
+    <app-slider-image-seven *ngIf="sliderShowThree && sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-seven>
+    <app-slider-image-eight *ngIf="sliderShowFour && sliderInHouse" class="slider-image-large" [ngClass]="{ 'slider-opacity': sliderOpacity }"></app-slider-image-eight>
 </div>

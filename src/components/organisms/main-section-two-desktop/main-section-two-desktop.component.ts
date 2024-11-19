@@ -9,15 +9,29 @@ import { SliderImageOneComponent } from '@atom/slider-image-one/slider-image-one
 import { SliderImageTwoComponent } from '@atom/slider-image-two/slider-image-two.component';
 import { SliderImageThreeComponent } from '@atom/slider-image-three/slider-image-three.component';
 import { SliderImageFourComponent } from '@atom/slider-image-four/slider-image-four.component';
+import { SliderImageFiveComponent } from '@atom/slider-image-five/slider-image-five.component';
+import { SliderImageSixComponent } from '@atom/slider-image-six/slider-image-six.component';
+import { SliderImageSevenComponent } from '@atom/slider-image-seven/slider-image-seven.component';
+import { SliderImageEightComponent } from '@atom/slider-image-eight/slider-image-eight.component'; 
   
 @Component({
   standalone: true,
   selector: 'app-main-section-two-desktop',
-  imports: [CommonModule, SliderImageOneComponent, SliderImageTwoComponent, SliderImageThreeComponent, SliderImageFourComponent],
+  imports: [
+    CommonModule, 
+    SliderImageOneComponent, 
+    SliderImageTwoComponent, 
+    SliderImageThreeComponent, 
+    SliderImageFourComponent,
+    SliderImageFiveComponent,
+    SliderImageSixComponent,
+    SliderImageSevenComponent,
+    SliderImageEightComponent],
   templateUrl: './main-section-two-desktop.component.html',
   styleUrls: ['./main-section-two-desktop.component.sass']
 })
 export class MainSectionTwoDesktopComponent implements OnInit, OnDestroy {
+  sliderInHouse: boolean = true;
   // Definimos las propiedades booleanas
   sliderShowOne: boolean = true;
   sliderShowTwo: boolean = false;

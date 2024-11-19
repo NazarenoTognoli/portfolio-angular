@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainPageComponent } from './main-page.component';
+import { SliderImageSixComponent } from './slider-image-six.component';
 
-describe('MainPageComponent', () => {
-  let component: MainPageComponent;
-  let fixture: ComponentFixture<MainPageComponent>;
+describe('SliderImageSixComponent', () => {
+  let component: SliderImageSixComponent;
+  let fixture: ComponentFixture<SliderImageSixComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainPageComponent]
+      imports: [SliderImageSixComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainPageComponent);
+    fixture = TestBed.createComponent(SliderImageSixComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

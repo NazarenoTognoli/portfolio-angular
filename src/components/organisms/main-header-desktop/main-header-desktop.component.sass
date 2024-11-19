@@ -16,18 +16,15 @@
     height: 100%
     width: 100px
     display: flex
-    justify-content: center
+    justify-content: flex-start
     align-items: center
     text-decoration: none
     //border-right: 1px solid #444
-    span
-        font-size: 25px
-        font-weight: 500
-        color: #afd3ff
-        transition: opacity .3s ease
-.home:hover
-    span
-        opacity: .5
+    div
+        width: 50px
+        height: 50px
+        display: flex
+        margin-left: 20px
 .links
     //width: calc(100% - 100px)
     height: 100%
@@ -88,6 +85,15 @@
     a:nth-of-type(4):hover
         div
             opacity: .5
+    .active-link
+        color: #adf
+        text-decoration: underline
+        text-decoration-color: #adf /* Color de la decoración */
+        text-decoration-thickness: 1.5px /* Grosor del subrayado */
+        text-underline-offset: 3px
+    .active-link:hover
+        color: #adf
+        cursor: default
 .light-mode-icon, .dark-mode-icon, .us-flag, .ar-flag
     display: none
 .light-mode-icon-true

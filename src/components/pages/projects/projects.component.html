@@ -1,0 +1,55 @@
+<div class="shadow" *ngIf="controlPanel"></div>
+<div class="body">
+    <div class="control-panel" *ngIf="controlPanel">
+        <div class="controls">
+            <div class="all-cont">
+                <button class="view-btn" (click)="toggleView(0)"><span>screenshots</span></button>
+                <button (click)="toggleView(1)"><span>diagrams</span></button>
+                <button class="description-btn" (click)="toggleView(2)"><span>description</span></button>
+            </div>
+            <div class="exit-cont">
+                <button class="exit-btn" (click)="controlPanel = false"></button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="view-images" *ngIf="sections[0]">
+                <div class="images-slider">
+                    <div class="bottom">
+                        <img src="/assets/images/portfolio-php-screenshots/img2.png">
+                    </div>
+                    <div class="top">
+                        <button class="btn-1">
+                            <app-back-arrow></app-back-arrow>
+                        </button>
+                        <button class="btn-2">
+                            <app-back-arrow></app-back-arrow>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-algorithm" *ngIf="sections[1]"></div>
+            <div class="description" *ngIf="sections[2]"></div>
+        </div>
+    </div>
+    <div class="item item-n1" (click)="controlPanel = true; projects['thisPortfolio'].state = true">
+        <div class="name"><span class="text">This Portfolio</span></div>
+    </div>
+    <div class="item item-n2" (click)="controlPanel = true">
+        <div class="name"><span class="text">Layout Creator</span></div>
+    </div>
+    <div class="item item-n3" (click)="controlPanel = true">
+        <div class="name"><span class="text">CRUD MERN Stack</span></div>
+    </div>
+    <div class="item item-n4" (click)="controlPanel = true">
+        <div class="name"><span class="text">CRUD ANS Stack</span></div>
+    </div>
+    <div class="item item-n5" (click)="controlPanel = true">
+        <div class="name"><span class="text">Problem Solving Tool</span></div>
+    </div>
+    <div class="item item-n6" (click)="controlPanel = true">
+        <div class="name"><span class="text">Algorithms</span></div>
+    </div>
+    <div class="item item-n7" (click)="controlPanel = true">
+        <div class="name"><span class="text">Portfolio Vanilla PHP</span></div>
+    </div>
+</div>

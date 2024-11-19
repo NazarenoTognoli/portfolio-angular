@@ -1,10 +1,10 @@
-<a href="" class="home">
-  <span>NET</span>  
+<a routerLink="/" class="home">
+  <div appMobileHomeButton></div>  
 </a>
 <div class="links">
-    <a href="">Details</a>
-    <a href="">Projects</a>
-    <a href="">Contact</a>
+    <a routerLink="/details" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Details</a>
+    <a routerLink="/projects" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
     <a (click)="darkMode = !darkMode">
       <div [ngClass]="{'dark-mode-icon-true': darkMode}" darkModeIcon class="dark-mode-icon"></div>
       <div [ngClass]="{'light-mode-icon-true': !darkMode}" lightModeIcon class="light-mode-icon"></div>

@@ -2,7 +2,7 @@
     height: 50px
     width: 50px
     display: none //This was none by default ?
-    justify-content: center
+    justify-content: flex-start
     align-items: center
     transition: fill .3s ease
     fill: #ccc
@@ -10,8 +10,12 @@
     fill: #adf
     //this shit for mobile
 svg
-    width: 75%
-    height: 75%
+    width: 35px
+    height: 35px
 @media (pointer: coarse) and (hover: none)
     :host
+        justify-content: center
         display: flex
+    svg
+        width: 75%
+        height: 75%    
