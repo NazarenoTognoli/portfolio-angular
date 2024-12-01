@@ -1,55 +1,43 @@
 <div class="shadow"></div>
 <div class="body">
     <div class="first-view" id="experience">
-        <section class="experience-section">
+        <video autoplay muted loop playsinline disablePictureInPicture class="background-video">
+            <source src="/assets/videos/coding-blue-1.mp4" type="video/mp4">
+        </video>
+        <div class="background-gradient"></div>
+        <section class="experience-section" [ngClass]="{'experience-section--not-chrome': isNotChrome()}">
             <h2><span class="color-letter">E</span>xperience</h2>
             <div class="non-formal-record">
                 <h3 class="title">Non-Formal Record:</h3>
                 <div class="record">
                     <span class="year"><div></div><div>2021</div></span>
-                    <span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    quis nostrud exercitation ullamco <b>laboris nisi</b> ut aliquip ex ea commodo
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                    <span class="content">Practicas aisladas en HTML y CSS.</span>
                     <div class="arrow"></div>
                 </div>
                 <div class="record">
                     <span class="year"><div></div><div>2022</div></span>
-                    <span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                    <span class="content">Aca integré Javascript y cree Manager Eternal en sus primeras versiones.</span>
                     <div class="arrow"></div>
                 </div>
                 <div class="record">
                     <span class="year"><div></div><div>2023</div></span>
-                    <span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                    <span class="content">Seguí desarrollando Manager Eternal</span>
                     <div class="arrow"></div>
                 </div>
                 <div class="record">
                     <span class="year"><div></div><div>2024</div></span>
-                    <span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                    <span class="content">Lleve el proyecto de Manager Eternal a un nuevo nivel y le cambié el nombre a Welfare System.</span>
                     <div class="arrow arrow-bottom"></div>
                 </div>
             </div>
         </section>
     </div>
     <div class="second-view" id="education">
-        <section class="education-section">
+        <video autoplay muted loop playsinline disablePictureInPicture class="background-video">
+            <source src="/assets/videos/coding-blue-1.mp4" type="video/mp4">
+        </video>
+        <div class="background-gradient"></div>
+        <section class="education-section" [ngClass]="{'education-section--not-chrome': isNotChrome()}">
             <h2><span class="color-letter">E</span>ducation</h2>
             <div class="formal-education">
                 <h3 class="title">Formal Education:</h3>
@@ -111,8 +99,12 @@
             </div>
         </section>
     </div>
-    <div class="third-view">
-        <section class="about-me-section">
+    <div class="third-view" id="personal">
+        <video autoplay muted loop playsinline disablePictureInPicture class="background-video">
+            <source src="/assets/videos/coding-blue-1.mp4" type="video/mp4">
+        </video>
+        <div class="background-gradient"></div>
+        <section class="about-me-section" [ngClass]="{'about-me-section--not-chrome': isNotChrome()}">
             <h2 class="about-me__title"><span class="color-letter">P</span>ersonal</h2>
             <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

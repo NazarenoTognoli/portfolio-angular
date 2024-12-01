@@ -1,5 +1,5 @@
 :host
-    width: 100%
+    width: calc(100vw - 7px)
     max-width: 1900px
     height: 50px
     display: flex
@@ -9,5 +9,7 @@
     z-index: 400
     transition: background-color ease .5s
 @media (pointer: coarse) and (hover: none)
+    :host
+        width: 100%
     .desktop
         display: none

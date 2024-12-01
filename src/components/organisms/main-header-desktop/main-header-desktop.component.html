@@ -5,14 +5,21 @@
     <a routerLink="/details" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Details</a>
     <a routerLink="/projects" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
     <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
-    <a (click)="darkMode = !darkMode">
-      <div [ngClass]="{'dark-mode-icon-true': darkMode}" darkModeIcon class="dark-mode-icon"></div>
-      <div [ngClass]="{'light-mode-icon-true': !darkMode}" lightModeIcon class="light-mode-icon"></div>
-      <div class="circle-icon" circleIcon></div>
+    <!-- <a (click)="darkMode = !darkMode">
+      <div   [ngClass]="{'dark-mode-icon-true': darkMode}" darkModeIcon class="dark-mode-icon"></div>
+      <div   [ngClass]="{'light-mode-icon-true': !darkMode}" lightModeIcon class="light-mode-icon"></div>
+      <div class="circle-icon"  circleIcon></div>
     </a>
-    <a (click)='usFlag = !usFlag'>
+    <a (click)='usFlag = !usFlag' >
       <div usFlag class="us-flag" [ngClass]="{'us-flag-true': usFlag}"></div>
       <div arFlag class="ar-flag" [ngClass]="{'ar-flag-true': !usFlag}"></div>
       <div switchIcon class="switch-icon"></div>
-    </a>
+    </a> -->
 </div>
+<a class="lang">
+  <div class="lang-options" *ngIf="langOptions">
+    <div (click)="english = true; spanish = false; langOptions = false"><span>English</span></div>
+    <div (click)="english = false; spanish = true; langOptions = false"><span>Spanish</span></div>
+  </div>
+  <span (click)="langOptions = !langOptions" class="lang-content"><div class="lang-arrow"   [ngClass]="{'lang-arrow-active': langOptions}"></div>Lang:<span class="label"*ngIf="english">en</span><span class="label" *ngIf="spanish">es</span></span>
+</a>

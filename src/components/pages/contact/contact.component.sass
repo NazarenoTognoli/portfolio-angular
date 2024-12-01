@@ -6,13 +6,124 @@
     max-width: 1900px
     background: #000
     justify-content: center
+@keyframes background-anim
+    45%
+        opacity: .1
+    50%
+        opacity: .2
+    55%
+        opacity: .1
+.background-video
+    transition: opacity 1s ease
+    opacity: .1
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: 0px -30px
+    z-index: 10
+    filter: grayscale(100%)
+    animation-name: background-anim
+    animation-duration: 4s
+    animation-delay: 4s
+    animation-timing-function: ease-in-out
+    animation-iteration-count: infinite
+.light, .light2
+    width: 300px
+    height: 150px
+    position: absolute
+    right: 100px
+    bottom: 100px
+    border-radius: 100%
+    background-color: darkorange
+    filter: blur(200px)
+    background-color: #000
+    display: none
+.light2
+    top: 100px
+    left: 200px
+.light
+    width: 400px
+    height: 70px
+    border-radius: 0
+.image
+    width: 250px
+    height: 250px
+    position: absolute
+    right: 10%
+    bottom: 50px
+    display: flex
+    justify-content: flex-end
+    svg
+        width: 100%
+        height: 100%
+        fill: #994000
+        fill: #191919
+@media (max-width: 700px)
+    .image
+        width: 200px
+        height: 200px
+.border-bottom
+    position: absolute
+    height: 1px
+    width: 100%
+    background: linear-gradient(to right, #000 0%, #777 50%, #000 100%)
+    bottom: 0
 .body
     width: 100%
-    height: calc(100vh - 50px)
-    background: #333
-    margin-top: 50px
+    min-height: 100vh
+    height: auto
+    background: #000
+    //margin-top: 50px
     position: relative
     display: flex
-    img
-        object-position: 0 0
-        width: 100%
+    flex-direction: column
+    align-items: center
+    overflow-y: hidden
+    h2
+        color: white
+        font-size: 38px
+        font-weight: 400
+        position: relative
+        padding: 5px 20px 5px 20px
+        width: 80%
+        background: #111
+        background: rgba(22, 22, 22, .7)
+        outline: 1px solid #444
+        opacity: 1
+        z-index: 100
+        letter-spacing: 5px
+        margin-top: 90px
+    .color-letter
+        color: #adf
+        font-weight: 500
+        text-shadow: 0px 0px 10px #ADF
+    .content
+        display: inherit
+        width: 80%
+        flex-direction: column
+        height: auto
+        position: relative
+        z-index: 100
+        .item
+            width: 100%
+            //border-left: 2px solid #adf
+            color: white
+            display: flex
+            font-size: clamp(19px, 4vw, 30px)
+            margin-top: 15px
+            align-items: center
+        .item__name
+            color: #adf
+            outline: 1px solid #444
+            font-weight: 400
+            padding: 0 10px 0 10px
+            background: rgba(22, 22, 22, .7)
+            height: 100%
+            display: flex
+            align-items: center
+        .item__cont
+            padding-left: 10px
+            word-break: break-word

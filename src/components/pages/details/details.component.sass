@@ -22,12 +22,67 @@
     left: -4.5px
     width: 9px
     height: 9px
+@keyframes stats-container-scroll-anim2
+    0%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    15%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+    45%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    60%
+        opacity: 1
+        filter: grayscale(0)
+        scale: 100%
+    100%
+        opacity: .5
+        filter: grayscale(100%)
+        scale: 97.5%
+@keyframes background-anim
+    45%
+        opacity: .2
+    50%
+        opacity: .3
+    60%
+        opacity: 0
+    70%
+        opacity: .2
+.background-gradient
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%)
+.background-video
+    transition: opacity 4s ease
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: -26px -30px
+    z-index: -1
+    filter: grayscale(100%)
+    animation-name: background-anim
+    animation-duration: 4s
+    animation-delay: 4s
+    animation-timing-function: ease-in-out
+    animation-iteration-count: infinite
+.background-video:nth-of-type(1)
+    object-position: -26px 20px
 :host
     display: flex
     position: relative
     width: calc(100vw - 7px)
     max-width: 1900px
-    background: #000
     justify-content: center
 .first-view, .second-view, .third-view
     width: 100%
@@ -35,16 +90,20 @@
     display: flex
     align-items: flex-start
     justify-content: center
-    //min-height: 100vh
+    min-height: 100vh
+    position: relative
+    min-width: 350px
+    //max-width: 1300px
+@media (min-width: 1000px)
+    .first-view, .second-view, .third-view
+        min-height: 700px
 .first-view
     align-items: flex-start
     //min-height: calc(100vh - 50px)
 .body
     color: #fff
     min-height: 100vh
-    width: 70%
-    min-width: 350px
-    max-width: 1300px
+    width: 100%
     height: auto
     display: flex
     flex-direction: column
@@ -53,7 +112,8 @@
         //margin: 5px 10px 5px 10px
         //outline: 1px solid #444
         padding: 90px 0 50px 0
-        //background: rgba(22, 22, 22, .7)
+        width: 70%
+        z-index: 100
         h2
             font-size: 24px
             font-size: 40px
@@ -82,9 +142,18 @@
     color: #ADF
     text-shadow: 0px 0px 20px #ADF
     font-weight: 500
+.experience-section--not-chrome
+    animation: none
 .experience-section
     display: flex
     flex-direction: column
+    view-timeline-name: --lol-l
+    view-timeline-axis: block
+    animation-timeline: --lol-l
+    animation-name: stats-container-scroll-anim2
+    animation-range: entry 10% cover 100%
+    animation-direction: alternate
+    animation-fill-mode: both
     .title
         color: #bbb
         padding: 0px 30px 0px 10px
@@ -119,9 +188,18 @@
         .content
             font-size: 15px
             color: #fff
+.education-section--not-chrome
+    animation-name: none
 .education-section
     width: 100%
     margin-right: 5px
+    view-timeline-name: --lol-l
+    view-timeline-axis: block
+    animation-timeline: --lol-l
+    animation-name: stats-container-scroll-anim2
+    animation-range: entry 0% cover 100%
+    animation-direction: alternate
+    animation-fill-mode: both
     .title
         color: #bbb
         padding: 0px 30px 0px 10px
@@ -183,9 +261,18 @@
         .content
             font-size: 15px
             color: #fff
+.about-me-section--not-chrome
+    animation-name: none
 .about-me-section
     width: 100%
     margin-left: 5px
+    view-timeline-name: --lol-l
+    view-timeline-axis: block
+    animation-timeline: --lol-l
+    animation-name: stats-container-scroll-anim2
+    animation-range: entry 0% cover 100%
+    animation-direction: alternate
+    animation-fill-mode: both
     .content
         padding: 10px
 .non-formal-record, .formal-education

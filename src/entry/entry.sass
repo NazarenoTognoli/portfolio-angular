@@ -13,11 +13,14 @@ $primary-color: #ccc
     background: none
     box-sizing: border-box
     font-family: 'Quicksand', monospace
-html
+body
     overflow-y: auto
     scroll-behavior: smooth
-body
     background-color: #000
+.body-no-scroll
+    overflow-y: hidden
+.body-no-scroll-desktop
+    overflow-y: hidden
 .main-header-while-nav-hidden
     background-color: rgba(0, 0, 0, 0)
     transition: background-color ease .5s, border-color ease .5s
@@ -27,9 +30,8 @@ body
     background-color: rgba(0, 0, 0, .9)
 .main-header-scrolled
     background: rgba(22, 22, 22, .7)
+    background-color: #000
     border-bottom: 1px solid #777
-.body-no-scroll
-    overflow-y: hidden
 /* Modificar el ancho de la barra de desplazamiento */
 ::-webkit-scrollbar
     width: 7px

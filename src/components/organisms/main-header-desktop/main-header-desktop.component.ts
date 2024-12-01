@@ -28,4 +28,7 @@ import { RouterModule } from '@angular/router';
 export class MainHeaderDesktopComponent {
   usFlag: boolean = true;
   darkMode: boolean = true;
+  langOptions: boolean = false;
+  english: boolean = true;
+  spanish: boolean = false;
 }

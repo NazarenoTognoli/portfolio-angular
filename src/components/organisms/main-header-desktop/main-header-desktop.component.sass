@@ -11,6 +11,7 @@
     width: 100%
     height: 100%
     justify-content: space-between
+    align-items: center
     //background: rgba(22, 22, 22, .7)
 .home
     height: 100%
@@ -32,7 +33,6 @@
     justify-content: flex-end
     align-items: center
     //sborder-left: 1px solid #444
-    padding-left: 40px
     a
         text-decoration: none
         color: #fff
@@ -40,51 +40,52 @@
         transition: color .2s ease
     a:nth-of-type(3)
         margin-right: clamp(1px, 5vw, 45px)
+        margin-right: 0
     a:hover
         color: #ffa600
         color: #999
         cursor: pointer
-    a:nth-of-type(5)
-        width: 30px
-        height: 30px
-        margin-right: 20px
-        position: relative
-        div
-            transition: opacity .3s
-            width: 30px
-            height: 30px
-            opacity: 1
-        div:nth-of-type(3)
-            display: flex
-            justify-content: center
-            align-items: center
-            opacity: 0
-    a:nth-of-type(5):hover
-        div
-            opacity: .5
-        div:nth-of-type(3)
-            opacity: 1
-    a:nth-of-type(4)
-        margin-right: 20px
-        width: 30px
-        height: 30px
-        position: relative
-        div
-            transition: opacity .3s
-            width: 100%
-            height: 100%
-            opacity: 1
-            justify-content: center
-            align-items: center
-            align-content: center
-        div:nth-of-type(3)
-            position: absolute
-            top: 0
-            left: 0
-            z-index: 500
-    a:nth-of-type(4):hover
-        div
-            opacity: .5
+    // a:nth-of-type(5)
+    //     width: 30px
+    //     height: 30px
+    //     margin-right: 20px
+    //     position: relative
+    //     div
+    //         transition: opacity .3s
+    //         width: 30px
+    //         height: 30px
+    //         opacity: 1
+    //     div:nth-of-type(3)
+    //         display: flex
+    //         justify-content: center
+    //         align-items: center
+    //         opacity: 0
+    // a:nth-of-type(5):hover
+    //     div
+    //         opacity: .5
+    //     div:nth-of-type(3)
+    //         opacity: 1
+    // a:nth-of-type(4)
+    //     margin-right: 20px
+    //     width: 30px
+    //     height: 30px
+    //     position: relative
+    //     div
+    //         transition: opacity .3s
+    //         width: 100%
+    //         height: 100%
+    //         opacity: 1
+    //         justify-content: center
+    //         align-items: center
+    //         align-content: center
+    //     div:nth-of-type(3)
+    //         position: absolute
+    //         top: 0
+    //         left: 0
+    //         z-index: 500
+    // a:nth-of-type(4):hover
+    //     div
+    //         opacity: .5
     .active-link
         color: #adf
         text-decoration: underline
@@ -104,6 +105,43 @@
     display: flex
 .ar-flag-true
     display: flex
+.lang
+    color: #fff
+    padding-right: 20px
+    position: relative
+    user-select: none
+    width: 93px
+.lang-content
+    width: 80px
+    height: 30px
+.lang-content:hover
+    cursor: pointer
+.lang-arrow
+    clip-path: polygon(0 0, 0% 100%, 100% 50%)
+    background: #fff
+    display: inline-block
+    height: 9px
+    width: 9px
+    margin-right: 5px
+    transition: transform .3s ease
+.lang-arrow-active
+    transform: rotate(90deg)
+.lang-options
+    position: absolute
+    display: flex
+    flex-direction: column
+    bottom: -50px
+    left: 20px
+    background: #000
+    color: #fff
+    div
+        border-left: 1px solid #fff
+        padding-left: 5px
+    div:nth-of-type(2)
+        margin-top: 5px
+    div:hover
+        color: #adf
+        cursor: pointer
 @media (pointer: coarse) and (hover: none)
     :host
         display: none

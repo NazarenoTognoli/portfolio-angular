@@ -21,7 +21,7 @@
     width: 100%
     height: 100%
     grid-gap: 10px
-    padding: 10px
+    padding: 30px 3vw 10px 3vw
     margin-top: 50px
     position: relative
 .control-panel
@@ -74,6 +74,11 @@
                 color: #fff
                 outline-color: #ddd
                 cursor: pointer
+            .active, .active:hover
+                color: #adf
+                outline-color: #adf
+                background: #111
+                cursor: default
 
 
         /* Sección de la X en el botón de salida */
@@ -105,7 +110,7 @@
                 transform: rotate(-45deg)
             button:hover
                 cursor: pointer
-                filter: brightness(70%)
+                filter: brightness(120%)
 
             /* Hover para cambiar el color de la X */
     .content
@@ -114,17 +119,17 @@
         div
             width: 100%
             height: 100%
-        .view-images
+        .view-images, .view-algorithm
             background: rgba(0, 0, 0, .5)
             display: flex
             justify-content: center
             align-items: center 
-            .images-slider
+            .images-slider, .diagram-slider
                 width: 70%
                 height: 90%
                 display: flex
                 flex-direction: column
-                .bottom
+                .top
                     width: 100%
                     height: 100%
                     display: flex
@@ -135,7 +140,7 @@
                         object-position: cover
                         width: 100%
                         max-width: 900px
-                .top
+                .bottom
                     width: 100%
                     height: 40px
                     margin-top: 5px
@@ -147,11 +152,12 @@
                         margin: 0 10px 0 10px
                     button:nth-of-type(2)
                         transform: scaleX(-1)
+                    .disabled
+                        filter: brightness(30%)
+                        pointer-events: none
             @media (max-width: 750px)
                 .images-slider
                     width: 90%
-        .view-algorithm
-            background: rgba(0, 255, 0, .5)
         .description
             background: rgba(255, 0, 255, .5)
 .item
@@ -162,7 +168,35 @@
     background-size: cover
     background-position: center
     position: relative
-    transition: filter .3s ease
+    transition: filter .3s ease, outline-color .3s ease
+    .fixed-name
+        color: #adf
+        display: none
+        font-weight: 600
+        font-size: 24px
+        position: absolute
+        top: 0
+        left: 0
+        width: auto
+        background: #222
+        outline: 1px solid #adf
+        opacity: 1
+        transition: opacity .3s ease
+        span
+            padding: 10px
+    .fixed-techs
+        position: absolute
+        display: flex
+        display: none
+        bottom: 10px
+        left: 10px
+        align-items: center
+        justify-content: space-around
+        span
+            font-size: 25px
+            color: #FFF
+            margin-left: 10px
+            font-weight: 700
     .name
         position: absolute
         left: 0
@@ -182,6 +216,8 @@
             font-size: 32px
             font-weight: 600
             text-shadow: 0px 0px 10px #000
+.item:hover
+    outline-color: #777
 @media (max-width: 800px)
     .item
         .name
