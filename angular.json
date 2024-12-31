@@ -16,6 +16,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
+          "baseHref": "/portfolio-angular/",
           "options": {
             "outputPath": "dist/portfolio-angular",
             "index": "src/index.html",
