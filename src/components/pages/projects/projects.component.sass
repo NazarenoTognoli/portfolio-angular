@@ -15,13 +15,15 @@
     left: 0
     top: 0
     z-index: 300
+.diagram-btn
+    display: none
 .body
     display: grid
-    grid-template-areas: "pj1 pj2 pj3" "pj4 pj5 pj5" "pj6 pj6 pj7"
+    grid-template-areas: "pj1 pj2"
     width: 100%
     height: 100%
     grid-gap: 10px
-    padding: 30px 3vw 10px 3vw
+    padding: 15px 1vw 5px 1vw
     margin-top: 50px
     position: relative
 .control-panel
@@ -74,6 +76,8 @@
                 color: #fff
                 outline-color: #ddd
                 cursor: pointer
+            button:nth-of-type(3)
+                display: none
             .active, .active:hover
                 color: #adf
                 outline-color: #adf
@@ -140,6 +144,14 @@
                         object-position: cover
                         width: 100%
                         max-width: 900px
+                    .default
+                        width: 100%
+                        height: 100%
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        color: #fff
+                        font-size: 19px
                 .bottom
                     width: 100%
                     height: 40px
@@ -159,7 +171,27 @@
                 .images-slider
                     width: 90%
         .description
-            background: rgba(255, 0, 255, .5)
+            background: rgba(0, 0, 0, .7)
+            .description__content
+                width: 100%
+                height: 100%
+                padding: 20px
+                color: #000
+                font-size: 16px
+                font-weight: 600
+                display: flex
+                align-items: flex-start
+                flex-direction: column
+                span
+                    background: #adf
+                    margin-top: 10px
+                    padding: 0 10px 0 10px
+                    border-radius: 5px
+                    a
+                        color: darkblue
+                span:nth-of-type(1)
+                    margin-top: 0
+
 .item
     height: 250px
     //margin: 10px
@@ -171,7 +203,6 @@
     transition: filter .3s ease, outline-color .3s ease
     .fixed-name
         color: #adf
-        display: none
         font-weight: 600
         font-size: 24px
         position: absolute
@@ -182,28 +213,38 @@
         outline: 1px solid #adf
         opacity: 1
         transition: opacity .3s ease
+        display: none
         span
             padding: 10px
     .fixed-techs
         position: absolute
         display: flex
-        display: none
         bottom: 10px
         left: 10px
         align-items: center
         justify-content: space-around
+        width: 100%
+        opacity: 0
+        transition: opacity .3s ease
+        z-index: 300
+        filter: none
+        isolation: isolate
         span
-            font-size: 25px
+            width: 25px
+            height: 25px
             color: #FFF
             margin-left: 10px
             font-weight: 700
+            img
+                width: 100%
+                height: 100%
     .name
         position: absolute
         left: 0
         top: 0
         width: 100%
         height: 100%
-        background: rgba(0, 0, 0, .5)
+        background: rgba(0, 0, 0, .6)
         display: flex
         align-items: center
         justify-content: center
@@ -218,6 +259,8 @@
             text-shadow: 0px 0px 10px #000
 .item:hover
     outline-color: #777
+    .fixed-techs
+        opacity: 1
 @media (max-width: 800px)
     .item
         .name
@@ -239,23 +282,27 @@
 .item-n3
     grid-area: pj3
     background-image: url('/assets/images/express-code.webp')
+    display: none
 .item-n4
     grid-area: pj4
     background-image: url('/assets/images/netcode.jpg')
+    display: none
 .item:hover
-    filter: grayscale(100%)
     .name
         opacity: 1
 .item-n5
-    grid-area: pj5
+    grid-area: pj3
     background-position: 0 0
     background-image: url('/assets/images/pst.png')
+    display: none
 .item-n6
     grid-area: pj6
     background-image: url('/assets/images/algorithms.png')
+    display: none
 .item-n7
     grid-area: pj7
     background-image: url('/assets/images/portfolio-php-screenshots/img1.png')
+    display: none
 @media (max-width: 800px)
     .body
         grid-template-areas: "pj1 pj2" "pj3 pj4" "pj5 pj5" "pj6 pj7"

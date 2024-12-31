@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 
 import { MatButtonModule } from '@angular/material/button';
 
@@ -8,7 +10,7 @@ import { MainDescriptionComponent } from '@mol/main-description/main-description
 @Component({
   selector: 'app-main-section-one-mobile',
   standalone: true,
-  imports: [MyNameMobileComponent, MatButtonModule, MyPhotoMobileComponent, MainDescriptionComponent],
+  imports: [MyNameMobileComponent, MatButtonModule, MyPhotoMobileComponent, MainDescriptionComponent, RouterModule],
   templateUrl: './main-section-one-mobile.component.html',
   styleUrl: './main-section-one-mobile.component.sass'
 })

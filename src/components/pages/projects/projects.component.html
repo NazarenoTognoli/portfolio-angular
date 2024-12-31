@@ -3,9 +3,9 @@
     <div class="control-panel" *ngIf="controlPanel">
         <div class="controls">
             <div class="all-cont">
-                <button class="view-btn" (click)="toggleView(0)" [ngClass]='{active: panelSections[0]}'><span>screenshots</span></button>
-                <button (click)="toggleView(1)" [ngClass]='{active: panelSections[1]}'><span>diagrams</span></button>
                 <button class="description-btn" [ngClass]='{active: panelSections[2]}' (click)="toggleView(2)"><span>description</span></button>
+                <button class="view-btn" (click)="toggleView(0)" [ngClass]='{active: panelSections[0]}'><span>screenshots</span></button>
+                <button (click)="toggleView(1)" [ngClass]='{active: panelSections[1]}' class="diagram-btn"><span>diagrams</span></button>
             </div>
             <div class="exit-cont">
                 <button class="exit-btn" (click)="controlPanel = false; normalizeScroll()"></button>
@@ -18,6 +18,12 @@
                         <img src="/assets/images/portfolio-php-screenshots/img1.png" *ngIf="image.absoluteIndex() === '7-1'">
                         <img src="/assets/images/portfolio-php-screenshots/img2.png" *ngIf="image.absoluteIndex() === '7-2'">
                         <img src="/assets/images/portfolio-php-screenshots/img3.png" *ngIf="image.absoluteIndex() === '7-3'">
+                        <img src="/assets/images/layout-creator.png" *ngIf="image.absoluteIndex() === '2-1'">
+                        <img src="/assets/images/layout-creator2.png" *ngIf="image.absoluteIndex() === '2-2'">
+                        <img src="/assets/images/layout-creator3.png" *ngIf="image.absoluteIndex() === '2-3'">
+                        <div class="default"  *ngIf="!['7-1', '7-2', '7-3', '2-1', '2-2', '2-3'].includes(image.absoluteIndex())">
+                            <span>No images</span>
+                        </div>
                     </div>
                     <div class="bottom">
                         <button class="btn-1" (click)="relativeIndexRefresh('back')" [ngClass]="{disabled: image.relativeIndex === 1}">
@@ -32,9 +38,9 @@
             <div class="view-algorithm" *ngIf="panelSections[1]">
                 <div class="diagram-slider">
                     <div class="top">
-                        <img src="/assets/images/portfolio-php-screenshots/img1.png" *ngIf="diagram.absoluteIndex() === '7-1'">
-                        <img src="/assets/images/portfolio-php-screenshots/img2.png" *ngIf="diagram.absoluteIndex() === '7-2'">
-                        <img src="/assets/images/portfolio-php-screenshots/img3.png" *ngIf="diagram.absoluteIndex() === '7-3'">
+                        <div class="default">
+                            <span>No diagrams</span>
+                        </div>
                     </div>
                     <div class="bottom">
                         <button class="btn-1" (click)="relativeIndexRefresh('back', 'diagram')" [ngClass]="{disabled: diagram.relativeIndex === 1}">
@@ -46,22 +52,75 @@
                     </div>
                 </div>
             </div>
-            <div class="description" *ngIf="panelSections[2]"></div>
+            <div class="description" *ngIf="panelSections[2]">
+                <div class="description__content" *ngIf="project.index === 1">
+                    <span><b>Techs used</b>: Angular, Sass, Angular Material, HTML, CSS, Typescript</span>
+                    <span><b>Description</b>: To showcase my skills, this project was a challenge since I was using a new technology (Angular), I liked it, more than React despite the fact that at the beggining I was missing its flexibility.</span>
+                    <span><b>Github</b>: <a href="https://github.com/NazarenoTognoli/portfolio-angular" target="_blank">See the repository</a></span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 2">
+                    <span><b>Techs used</b>: HTML, CSS, Javascript</span>
+                    <span><b>Description</b>: To create flexible user interfaces, I designed this with the purpose of being a service for my other project (Problem Solving Tool), in this other project there is a feature that is a console for managing the internal state of the application, and this service that I created, I thought to implement it for this console, to create flexible interfaces.</span>
+                    <span><b>Github</b>: <a href="https://github.com/NazarenoTognoli/without-documentation/tree/master/2024/flexible-grid-placer" target="_blank">See the repository</a></span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 3">
+                    <span><b>Techs used</b>: Node/Express, React, HTML CSS, Javascript, MaterialUI, redux-toolkit</span>
+                    <span><b>Description</b>: This project it does not even exists yet</span>
+                    <span><b>Github</b>: <a href="">See the repository</a></span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 4">
+                    <span><b>Techs used</b>: Angular, C#/.NET, AngularMaterial, Sass, HTML, CSS, Typescript</span>
+                    <span><b>Description</b>: This project it does not even exists yet</span>
+                    <span><b>Github</b>: <a href="">See the repository</a></span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 5">
+                    <span><b>Techs used</b>: Node/Express, React, HTML CSS, Javascript, MaterialUI, redux-toolkit</span>
+                    <span><b>Description</b>: This is the main project where I put all my efforts these recent years, it is thought to be a frame for solving problems and then making it a kind of social network. The design can be intricated and separated by layers, layers of complexity, I thought to connect it to a RAG in the C# version of it. Right now the solutions are separated of the code, I am working to implement them in real software while I'm finding more ways of improving the problem solving frame.</span>
+                    <span><b>Github</b>: <a href="https://github.com/NazarenoTognoli/ME_ver.0.0.0-frontend">See the repository</a></span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 6">
+                    <span><b>Description</b>: How can I even organize this?</span>
+                </div>
+                <div class="description__content" *ngIf="project.index === 7">
+                    <span><b>Techs used</b>: HTML, CSS, Javscript, PHP</span>
+                    <span><b>Description</b>: To showcase my skills, but I abandoned the project due to a scalability issue because the code is of poor quality</span>
+                    <span><b>Github</b>: <a href="">See the repository</a></span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="item item-n1" (click)="controlPanel = true; refreshProjectIndex(1)">
         <div class="fixed-name"><span>this portfolio</span></div>
         <div class="fixed-techs">
-            <span>A</span>
-            <span>B</span>
-            <span>C</span>
-            <span>D</span>
+            <span>
+                <img src="/assets/images/html.png">
+            </span>
+            <span>
+                <img src="/assets/images/sass.png">
+            </span>
+            <span>
+                <img src="/assets/images/typescript.png">
+            </span>
+            <span>
+                <img src="/assets/images/angular.png">
+            </span>
         </div>
         <div class="name"><span class="text"><span class="color">T</span>his <span class="color">P</span>ortfolio</span></div>
     </div>
     <div class="item item-n2" (click)="controlPanel = true; refreshProjectIndex(2)">
-        <div class="fixed-name"><span>Layour Creator</span></div>
-        <div class="name"><span class="text"><span class="color">L</span>ayour <span class="color">C</span>reator</span></div>
+        <div class="fixed-name"><span>Layout Creator</span></div>
+        <div class="name"><span class="text"><span class="color">L</span>ayout <span class="color">C</span>reator</span></div>
+        <div class="fixed-techs">
+            <span>
+                <img src="/assets/images/html.png">
+            </span>
+            <span>
+                <img src="/assets/images/css.png">
+            </span>
+            <span>
+                <img src="/assets/images/js.png">
+            </span>
+        </div>
     </div>
     <div class="item item-n3" (click)="controlPanel = true; refreshProjectIndex(3)">
         <div class="fixed-name"><span>CRUD MERN Stack</span></div>

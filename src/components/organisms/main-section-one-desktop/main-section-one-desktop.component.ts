@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
 
@@ -22,7 +23,8 @@ import { TestNavigatorService } from '@srv/test-navigator.service';
             ContactButtonContentComponent,
             CommonModule,
             XpBtnContentComponent,
-            ProjBtnContentComponent],
+            ProjBtnContentComponent,
+            RouterModule],
   templateUrl: './main-section-one-desktop.component.html',
   styleUrl: './main-section-one-desktop.component.sass'
 })

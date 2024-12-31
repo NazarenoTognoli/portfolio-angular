@@ -7,6 +7,7 @@
     top: calc(100vh - 50px)
     background: linear-gradient(to top, #000 0%, transparent 100%)
     z-index: 100
+    display: none
 .arrow
     position: absolute
     left: -5.5px
@@ -58,7 +59,7 @@
     height: 100%
     top: 0
     left: 0
-    background: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%)
+    background: linear-gradient(to right, transparent 0%, #000 25%, #000 75%, transparent 100%)
 .background-video
     transition: opacity 4s ease
     opacity: 0
@@ -78,12 +79,22 @@
     animation-iteration-count: infinite
 .background-video:nth-of-type(1)
     object-position: -26px 20px
+.transform-video
+    transform: scaleX(-1)
 :host
     display: flex
     position: relative
     width: calc(100vw - 7px)
     max-width: 1900px
     justify-content: center
+.border-bottom
+    position: absolute
+    width: 100%
+    height: 1px
+    background: linear-gradient(to right, transparent 0%, #777 50%, transparent 100%)
+    bottom: 0
+    left: 0
+    z-index: 400
 .first-view, .second-view, .third-view
     width: 100%
     height: auto
@@ -94,12 +105,15 @@
     position: relative
     min-width: 350px
     //max-width: 1300px
+    align-items: center
 @media (min-width: 1000px)
     .first-view, .second-view, .third-view
         min-height: 700px
-.first-view
-    align-items: flex-start
-    //min-height: calc(100vh - 50px)
+    .first-view
+        min-height: 100vh
+@media (min-width: 2500px)
+    .first-view
+        min-height: 700px
 .body
     color: #fff
     min-height: 100vh
@@ -111,7 +125,7 @@
     section
         //margin: 5px 10px 5px 10px
         //outline: 1px solid #444
-        padding: 90px 0 50px 0
+        //padding: 90px 0 50px 0
         width: 70%
         z-index: 100
         h2
@@ -147,13 +161,6 @@
 .experience-section
     display: flex
     flex-direction: column
-    view-timeline-name: --lol-l
-    view-timeline-axis: block
-    animation-timeline: --lol-l
-    animation-name: stats-container-scroll-anim2
-    animation-range: entry 10% cover 100%
-    animation-direction: alternate
-    animation-fill-mode: both
     .title
         color: #bbb
         padding: 0px 30px 0px 10px
@@ -188,18 +195,20 @@
         .content
             font-size: 15px
             color: #fff
+            a
+                text-decoration: none
+                font-weight: bolder
+                color: #adf
+                text-shadow: 0px 0px 25px #ADF
+                font-size: 15px
+            a:hover
+                color: #55f
+
 .education-section--not-chrome
     animation-name: none
 .education-section
     width: 100%
     margin-right: 5px
-    view-timeline-name: --lol-l
-    view-timeline-axis: block
-    animation-timeline: --lol-l
-    animation-name: stats-container-scroll-anim2
-    animation-range: entry 0% cover 100%
-    animation-direction: alternate
-    animation-fill-mode: both
     .title
         color: #bbb
         padding: 0px 30px 0px 10px
@@ -266,15 +275,12 @@
 .about-me-section
     width: 100%
     margin-left: 5px
-    view-timeline-name: --lol-l
-    view-timeline-axis: block
-    animation-timeline: --lol-l
-    animation-name: stats-container-scroll-anim2
-    animation-range: entry 0% cover 100%
-    animation-direction: alternate
-    animation-fill-mode: both
     .content
         padding: 10px
+        display: flex
+        flex-direction: column
+        span
+            padding-top: 5px
 .non-formal-record, .formal-education
     margin-top: 10px
 

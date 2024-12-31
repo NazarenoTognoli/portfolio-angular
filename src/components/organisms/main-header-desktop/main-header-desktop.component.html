@@ -1,10 +1,10 @@
-<a routerLink="/" class="home">
+<a routerLink="/" class="home" (click)="normalizeScroll()">
   <div appMobileHomeButton></div>  
 </a>
 <div class="links">
-    <a routerLink="/details" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Details</a>
-    <a routerLink="/projects" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
-    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+    <a routerLink="/details" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="normalizeScroll()">Details</a>
+    <a routerLink="/projects" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="normalizeScroll()">Projects</a>
+    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="normalizeScroll()">Contact</a>
     <!-- <a (click)="darkMode = !darkMode">
       <div   [ngClass]="{'dark-mode-icon-true': darkMode}" darkModeIcon class="dark-mode-icon"></div>
       <div   [ngClass]="{'light-mode-icon-true': !darkMode}" lightModeIcon class="light-mode-icon"></div>
@@ -16,7 +16,7 @@
       <div switchIcon class="switch-icon"></div>
     </a> -->
 </div>
-<a class="lang">
+<a class="lang" style="opacity: 0;">
   <div class="lang-options" *ngIf="langOptions">
     <div (click)="english = true; spanish = false; langOptions = false"><span>English</span></div>
     <div (click)="english = false; spanish = true; langOptions = false"><span>Spanish</span></div>

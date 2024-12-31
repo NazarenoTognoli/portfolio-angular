@@ -14,7 +14,7 @@ type NavigationDirection = "next" | "back";
 })
 export class ProjectsComponent {
   controlPanel: boolean = false;
-  panelSections: Array<boolean> = [true, false, false];
+  panelSections: Array<boolean> = [false, false, true];
   project = { index: 1 };
   image = {
     relativeIndex: 1,
@@ -29,17 +29,16 @@ export class ProjectsComponent {
 
   refreshLimits() {
     switch (this.project.index) {
-        case 1:
-            this.image.limit = 3;
-            this.diagram.limit = 5;
-            break;
         case 2:
-            this.image.limit = 7;
-            this.diagram.limit = 2;
+            this.image.limit = 3;
+            break;
+        case 7:
+            this.image.limit = 3;
+            this.diagram.limit = 1;
             break;
         default:
-            this.image.limit = 3;
-            this.diagram.limit = 3;
+            this.image.limit = 1;
+            this.diagram.limit = 1;
     }  
     this.image.relativeIndex = 1;
     this.diagram.relativeIndex = 1;
